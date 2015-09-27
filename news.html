@@ -13,65 +13,7 @@
         <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
     </head>
     <body>
-        <nav class="black" role="navigation">
-            <div class="nav-wrapper container">
-                <a id="logo-container" href="#" class="brand-logo"><img src="img/logo/porosunnyrays.png" class="display-logo"/><span>Lalelulelo</span></a>
-                <ul class="right hide-on-med-and-down tabs">
-                    <li class="tab col s3"><a href="#" class="waves-effect waves-light">Home</a></li>
-                    <li class="tab col s3"><a href="#" class="waves-effect waves-light">News</a></li>
-                    <li class="tab col s3"><a href="#" class="waves-effect waves-light">Events</a></li>
-                    <li class="tab col s3"><a href="#" class="waves-effect waves-light">Store</a></li>
-                    <li class="tab col s3"><a href="#" class="waves-effect waves-light">Contact</a></li>
-                    <li class="tab col s3"><a href="#" class="waves-effect waves-light">LogIn</a></li>
-                </ul>
-
-                <ul id="nav-mobile" class="side-nav">
-                    <li><a href="#" class="waves-effect waves-light">Home</a></li>
-                    <li><a href="#" class="waves-effect waves-light">News</a></li>
-                    <li><a href="#" class="waves-effect waves-light">Events</a></li>
-                    <li><a href="#" class="waves-effect waves-light">Store</a></li>
-                    <li><a href="#" class="waves-effect waves-light">Contact</a></li>
-                    <li><a href="#" class="waves-effect waves-light">LogIn</a></li>
-                </ul>
-                <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
-            </div>
-        </nav>
-
-        <div class="slider">
-            <ul class="slides">
-                <li>
-                    <img src="img/slider/project_rotator_live_crop.jpg" style="top: 150px;">
-                    <div class="caption left-align">
-                        <h3>League Of Legends</h3>
-                        <h4>MEMORY REPAIR <br>// COMPLETE</h4>
-                        <h5 class="light grey-text text-lighten-3">My name is Yi</h5>
-                    </div>
-                </li>
-                <li>
-                    <img src="img/slider/bg_thebetaisover.jpg"> <!-- random image -->
-                    <div class="caption center-align">
-                        <h3>DOTA 2</h3>
-                        <h4>THE BETA IS OVER</h4>
-                        <h5 class="light grey-text text-lighten-3">Get Dota 2 on Steam</h5>
-                    </div>
-                </li>
-                <li>
-                    <img src="img/slider/reaper-of-souls.jpg"> <!-- random image -->
-                    <div class="caption left-align">
-                        <h3>DIABLO III</h3>
-                        <h4 class="light grey-text text-lighten-3">Reaper Of Souls Expansion</h4>
-                    </div>
-                </li>
-                <li>
-                    <img src="img/slider/Featureshowcase_XingTian.jpg"> <!-- random image -->
-                    <div class="caption center-align">
-                        <h3>SMITE</h3>
-                        <h4>Enter Xing Tian</h4>
-                        <h5 class="light grey-text text-lighten-3">The Relentless</h5>
-                    </div>
-                </li>
-            </ul>
-        </div>
+        <div id="navBar"></div>
         
         <div class="container">
             <div class="section">
@@ -312,9 +254,8 @@
         <script src="js/materialize.js"></script>
         <script src="js/init.js"></script>
         <script>
-            $(document).ready(function () {
-                $('.slider').slider({full_width: true});
-                $('ul.tabs').tabs('select_tab', 'tab_id');
+            $(function(){
+                $("#navBar").load("../sistemas-avanzados/includes/navbar.html");
             });
         </script>
 
