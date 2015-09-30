@@ -18,6 +18,11 @@ nav .brand-logo {
 }
 
 nav .brand-logo span{
+  font-size: 20px;
+  /*font-family: TimeSplitters;*/
+}
+
+nav .brand-logo span{
   position: absolute;
 }
 
@@ -33,6 +38,35 @@ nav .tabs{
 
 .card .card-content p a{
     color: #009688;
+}
+
+ul.collapsible .collapsible-header img{
+    margin-top: 15px;
+    margin-bottom: -15px!important;
+    width: 100%;
+}
+
+ul.collapsible .collapsible-header h5{
+    color: #009688;
+}
+
+ul.collapsible .collapsible-body .event-sub{
+    font-size: 1.3rem;
+    color: gray;
+    padding-bottom: .5rem;
+}
+
+ul.collapsible .collapsible-body p{
+    padding: 1rem 2rem .5em 2rem;
+}
+
+ul.collapsible .collapsible-body img{
+    width: 100%;
+}
+
+ul.collapsible .collapsible-body ol li{
+    list-style-type: upper-roman!important;
+    margin-left: 30px;
 }
 
 p {
@@ -77,6 +111,11 @@ p {
 .icon-block {
   padding: 0 15px;
 }
+
+.icon-block img{
+  width: 100%;
+}
+
 .icon-block .material-icons {
   font-size: inherit;
 }

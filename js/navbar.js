@@ -27,6 +27,18 @@ $( document ).on('click', 'ul.tabs li a', function(){
         case "News":
             window.location.href = "../sistemas-avanzados/news.html";
             break;
+        case "Events":
+            window.location.href = "../sistemas-avanzados/events.html";
+            break;
+        case "Store":
+            window.location.href = "../sistemas-avanzados/store.html";
+            break;
+        case "Contact":
+            window.location.href = "../sistemas-avanzados/contact.html";
+            break;
+        case "LogIn":
+            window.location.href = "../sistemas-avanzados/login.html";
+            break;
     }
 });
 
