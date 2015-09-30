@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+        <title>Events | Doran Took My Money</title>
+        <link rel="shortcut icon" href="img/logo/poro.png">
+
+        <!-- CSS  -->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+        <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    </head>
+    <body>
+        <div id="navBar"></div>
+
+        <div class="container">
+            <div class="section">
+                <ul class="collapsible popout" data-collapsible="accordion">
+                    <li>
+                        <div class="collapsible-header"><i class="material-icons">filter_drama</i>First</div>
+                        <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header"><i class="material-icons">place</i>Second</div>
+                        <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header"><i class="material-icons">whatshot</i>Third</div>
+                        <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+                    </li>
+                </ul>
+                
+            </div>
+        </div>
+        
+
+        <footer class="page-footer teal">
+            <div class="container">
+                <div class="row">
+                    <div class="col l6 s12">
+                        <h5 class="white-text">Who we are?</h5>
+                        <p class="grey-text text-lighten-4">We are a team of college students working on this project like it's our full time job.</p>
+
+
+                    </div>
+                    <div class="col l3 s12">
+                        <h5 class="white-text">Sitemap</h5>
+                        <ul>
+                            <li><a class="white-text" href="#!">News</a></li>
+                            <li><a class="white-text" href="#!">Events</a></li>
+                            <li><a class="white-text" href="#!">Store</a></li>
+                            <li><a class="white-text" href="#!">Contact</a></li>
+                            <li><a class="white-text" href="#!">FAQs</a></li>
+                        </ul>
+                    </div>
+                    <div class="col l3 s12">
+                        <h5 class="white-text">External</h5>
+                        <ul>
+                            <li><a class="white-text" href="#!">League Of Legends</a></li>
+                            <li><a class="white-text" href="#!">Dota 2</a></li>
+                            <li><a class="white-text" href="#!">Diablo III</a></li>
+                            <li><a class="white-text" href="#!">Smite</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-copyright">
+                <div class="container">
+                    Made by Electronic Systems Department - <a class="brown-text text-lighten-3" href="http://www.uaa.mx/">Universidad Autónoma de México</a>
+                </div>
+            </div>
+        </footer>
+
+
+        <!--  Scripts-->
+        <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <script src="js/materialize.js"></script>
+        <script src="js/init.js"></script>
+        <script>
+            $(function () {
+                $("#navBar").load("../sistemas-avanzados/includes/navbar.html");
+            });
+            $(".collection-item").hover(function () {
+                $("span.badge").css("color", "#fff");
+            }, function () {
+                $("span.badge").css("color", "#26a69a");
+            });
+        </script>
+
+    </body>
+</html>
+

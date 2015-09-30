@@ -31,6 +31,10 @@ nav .tabs{
     line-height: 25px;
 }
 
+.card .card-content p a{
+    color: #009688;
+}
+
 p {
   line-height: 2rem;
 }

@@ -3,7 +3,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
-        <title>Doran Took My Money</title>
+        <title>Home | Doran Took My Money</title>
         <link rel="shortcut icon" href="img/logo/poro.png">
 
         <!-- CSS  -->
@@ -11,10 +11,12 @@
         <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
         <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
         <script src="js/jquery-2.1.4.min.js"></script>
+        <script src="js/materialize.js"></script>
+        <script src="js/init.js"></script>
     </head>
     <body>
         <div id="navBar"></div>
-
+        
         <div class="slider">
             <ul class="slides">
                 <li>
@@ -46,6 +48,14 @@
                         <h3>SMITE</h3>
                         <h4>Enter Xing Tian</h4>
                         <h5 class="light grey-text text-lighten-3">The Relentless</h5>
+                    </div>
+                </li>
+                <li>
+                    <img src="img/slider/preview-lg.jpg"> <!-- random image -->
+                    <div class="caption center-align">
+                        <h3>Heroes Of The Storm</h3>
+                        <h4>Infernal Shrines</h4>
+                        <h5 class="light grey-text text-lighten-3">Defeat the guardians!</h5>
                     </div>
                 </li>
             </ul>
@@ -247,50 +257,37 @@
             </div>
         </div>
 
-        <footer class="page-footer teal">
-            <div class="container">
-                <div class="row">
-                    <div class="col l6 s12">
-                        <h5 class="white-text">Who we are?</h5>
-                        <p class="grey-text text-lighten-4">We are a team of college students working on this project like it's our full time job.</p>
+        <div id="footer"></div>
 
-
-                    </div>
-                    <div class="col l3 s12">
-                        <h5 class="white-text">Sitemap</h5>
-                        <ul>
-                            <li><a class="white-text" href="#!">News</a></li>
-                            <li><a class="white-text" href="#!">Events</a></li>
-                            <li><a class="white-text" href="#!">Store</a></li>
-                            <li><a class="white-text" href="#!">Contact</a></li>
-                            <li><a class="white-text" href="#!">FAQs</a></li>
-                        </ul>
-                    </div>
-                    <div class="col l3 s12">
-                        <h5 class="white-text">External</h5>
-                        <ul>
-                            <li><a class="white-text" href="#!">League Of Legends</a></li>
-                            <li><a class="white-text" href="#!">Dota 2</a></li>
-                            <li><a class="white-text" href="#!">Diablo III</a></li>
-                            <li><a class="white-text" href="#!">Smite</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-copyright">
-                <div class="container">
-                    Made by Electronic Systems Department - <a class="brown-text text-lighten-3" href="http://www.uaa.mx/">Universidad Autónoma de México</a>
-                </div>
-            </div>
-        </footer>
-        <script src="js/materialize.js"></script>
-        <script src="js/init.js"></script>
         <script>
             $(function(){
+                $('ul.tabs').tabs();
                 $("#navBar").load("../sistemas-avanzados/includes/navbar.html");
+                $("#footer").load("../sistemas-avanzados/includes/footer.html");
+                var url = window.location.href.split('/');
+//                alert(url[url.length-1]);
+                switch(url[url.length-1]){
+                    case "index.html":
+                        $('a#homeLink').attr("active");
+                        break;
+                    case "news.html":
+                        $('a#newsLink').attr("active");
+                        break;
+                }
             });
             $(document).ready(function () {
                 $('.slider').slider({full_width: true});
+            });
+            $( document ).on('click', 'ul.tabs li a', function(){
+//                alert($(this).text());
+                switch($(this).text().toString()){
+                    case "Home":
+                        window.location.href = "../sistemas-avanzados/index.html";
+                        break;
+                    case "News":
+                        window.location.href = "../sistemas-avanzados/news.html";
+                        break;
+                }
             });
         </script>
 
