@@ -15,8 +15,30 @@
         <script src="js/init.js"></script>
     </head>
     <body>
-        <div id="navBar"></div>
-        
+        <nav class="black" role="navigation">
+            <div class="nav-wrapper container">
+                <a id="logo-container" href="#" class="brand-logo"><img src="img/logo/porosunnyrays.png" class="display-logo"/><span>Lalelulelo</span></a>
+                <ul class="right hide-on-med-and-down tabs">
+                    <li class="tab col s3"><a id="homeLink" class="active waves-effect waves-light">Home</a></li>
+                    <li class="tab col s3"><a id="newsLink" class="waves-effect waves-light">News</a></li>
+                    <li class="tab col s3"><a id="eventsLink" class="waves-effect waves-light">Events</a></li>
+                    <li class="tab col s3"><a id="storeLink" class="waves-effect waves-light">Store</a></li>
+                    <li class="tab col s3"><a id="contactLink" class="waves-effect waves-light">Contact</a></li>
+                    <li class="tab col s3"><a id="logInLink" class="waves-effect waves-light">LogIn</a></li>
+                </ul>
+
+                <ul id="nav-mobile" class="side-nav">
+                    <li><a id="homeMobileLink" class="waves-effect waves-light">Home</a></li>
+                    <li><a id="newsMobileLink" class="waves-effect waves-light">News</a></li>
+                    <li><a id="eventsMobileLink" class="waves-effect waves-light">Events</a></li>
+                    <li><a id="storeMobileLink" class="waves-effect waves-light">Store</a></li>
+                    <li><a id="contactMobileLink" class="waves-effect waves-light">Contact</a></li>
+                    <li><a id="logInMobileLink" class="waves-effect waves-light">LogIn</a></li>
+                </ul>
+                <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+            </div>
+        </nav>
+
         <div class="slider">
             <ul class="slides">
                 <li>
@@ -60,7 +82,7 @@
                 </li>
             </ul>
         </div>
-        
+
         <div class="container">
             <div class="section">
                 <!--   Icon Section   -->
@@ -113,7 +135,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="row">
                     <div class="col s12 m4">
                         <div class="card">
@@ -222,29 +244,29 @@
         </div>
 
 
-<!--        <div class="parallax-container valign-wrapper">
-            <div class="section no-pad-bot">
+        <!--        <div class="parallax-container valign-wrapper">
+                    <div class="section no-pad-bot">
+                        <div class="container">
+                            <div class="row center">
+                                <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        
                 <div class="container">
-                    <div class="row center">
-                        <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
+                    <div class="section">
+        
+                        <div class="row">
+                            <div class="col s12 center">
+                                <h3><i class="mdi-content-send brown-text"></i></h3>
+                                <h4>Contact Us</h4>
+                                <p class="left-align light">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque id nunc nec volutpat. Etiam pellentesque tristique arcu, non consequat magna fermentum ac. Cras ut ultricies eros. Maecenas eros justo, ullamcorper a sapien id, viverra ultrices eros. Morbi sem neque, posuere et pretium eget, bibendum sollicitudin lacus. Aliquam eleifend sollicitudin diam, eu mattis nisl maximus sed. Nulla imperdiet semper molestie. Morbi massa odio, condimentum sed ipsum ac, gravida ultrices erat. Nullam eget dignissim mauris, non tristique erat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;</p>
+                            </div>
+                        </div>
+        
                     </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="container">
-            <div class="section">
-
-                <div class="row">
-                    <div class="col s12 center">
-                        <h3><i class="mdi-content-send brown-text"></i></h3>
-                        <h4>Contact Us</h4>
-                        <p class="left-align light">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque id nunc nec volutpat. Etiam pellentesque tristique arcu, non consequat magna fermentum ac. Cras ut ultricies eros. Maecenas eros justo, ullamcorper a sapien id, viverra ultrices eros. Morbi sem neque, posuere et pretium eget, bibendum sollicitudin lacus. Aliquam eleifend sollicitudin diam, eu mattis nisl maximus sed. Nulla imperdiet semper molestie. Morbi massa odio, condimentum sed ipsum ac, gravida ultrices erat. Nullam eget dignissim mauris, non tristique erat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;</p>
-                    </div>
-                </div>
-
-            </div>
-        </div>-->
+                </div>-->
 
 
         <div class="parallax-container valign-wrapper">
@@ -257,37 +279,47 @@
             </div>
         </div>
 
-        <div id="footer"></div>
+        <footer class="page-footer teal">
+            <div class="container">
+                <div class="row">
+                    <div class="col l6 s12">
+                        <h5 class="white-text">Who we are?</h5>
+                        <p class="grey-text text-lighten-4">We are a team of college students working on this project like it's our full time job.</p>
 
+
+                    </div>
+                    <div class="col l3 s12">
+                        <h5 class="white-text">Sitemap</h5>
+                        <ul>
+                            <li><a class="white-text" href="#!">News</a></li>
+                            <li><a class="white-text" href="#!">Events</a></li>
+                            <li><a class="white-text" href="#!">Store</a></li>
+                            <li><a class="white-text" href="#!">Contact</a></li>
+                            <li><a class="white-text" href="#!">FAQs</a></li>
+                        </ul>
+                    </div>
+                    <div class="col l3 s12">
+                        <h5 class="white-text">External</h5>
+                        <ul>
+                            <li><a class="white-text" href="#!">League Of Legends</a></li>
+                            <li><a class="white-text" href="#!">Dota 2</a></li>
+                            <li><a class="white-text" href="#!">Diablo III</a></li>
+                            <li><a class="white-text" href="#!">Smite</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-copyright">
+                <div class="container">
+                    Made by Electronic Systems Department - <a class="brown-text text-lighten-3" href="http://www.uaa.mx/">Universidad Autónoma de México</a>
+                </div>
+            </div>
+        </footer>
+
+        <script src="js/navbar.js"></script>
         <script>
-            $(function(){
-                $('ul.tabs').tabs();
-                $("#navBar").load("../sistemas-avanzados/includes/navbar.html");
-                $("#footer").load("../sistemas-avanzados/includes/footer.html");
-                var url = window.location.href.split('/');
-//                alert(url[url.length-1]);
-                switch(url[url.length-1]){
-                    case "index.html":
-                        $('a#homeLink').attr("active");
-                        break;
-                    case "news.html":
-                        $('a#newsLink').attr("active");
-                        break;
-                }
-            });
             $(document).ready(function () {
                 $('.slider').slider({full_width: true});
-            });
-            $( document ).on('click', 'ul.tabs li a', function(){
-//                alert($(this).text());
-                switch($(this).text().toString()){
-                    case "Home":
-                        window.location.href = "../sistemas-avanzados/index.html";
-                        break;
-                    case "News":
-                        window.location.href = "../sistemas-avanzados/news.html";
-                        break;
-                }
             });
         </script>
 
