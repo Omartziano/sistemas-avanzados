@@ -38,5 +38,6 @@ if ($conn->query($sql) === TRUE) {
 
 $conn->close();
 
+session_set_cookie_params(0);
 session_start();
 $_SESSION["username"] = $postUsername;
