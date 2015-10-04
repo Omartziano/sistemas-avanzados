@@ -22,22 +22,22 @@ $(function(){
 $( document ).on('click', 'ul.tabs li a', function(){
     switch($(this).text().toString()){
         case "Home":
-            window.location.href = "../sistemas-avanzados/index.html";
+            window.location.href = "../sistemas-avanzados/index.php";
             break;
         case "News":
-            window.location.href = "../sistemas-avanzados/news.html";
+            window.location.href = "../sistemas-avanzados/news.php";
             break;
         case "Events":
-            window.location.href = "../sistemas-avanzados/events.html";
+            window.location.href = "../sistemas-avanzados/events.php";
             break;
         case "Store":
-            window.location.href = "../sistemas-avanzados/store.html";
+            window.location.href = "../sistemas-avanzados/store.php";
             break;
         case "Contact":
-            window.location.href = "../sistemas-avanzados/contact.html";
+            window.location.href = "../sistemas-avanzados/contact.php";
             break;
         case "LogIn":
-            window.location.href = "../sistemas-avanzados/login.html";
+            window.location.href = "../sistemas-avanzados/login.php";
             break;
     }
 });
