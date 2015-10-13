@@ -24,7 +24,15 @@
                     <li class="tab col s3"><a href="#" class="waves-effect waves-light">Events</a></li>
                     <li class="tab col s3"><a href="#" class="waves-effect waves-light">Store</a></li>
                     <li class="tab col s3"><a href="#" class="active waves-effect waves-light">Contact</a></li>
-                    <li class="tab col s3"><a href="#" class="waves-effect waves-light">LogIn</a></li>
+                    <?php
+                        session_set_cookie_params(0);
+                        session_start();
+                        if(empty($_SESSION["username"])){
+                            echo "<li class='tab col s3'><a id='logInLink' class='waves-effect waves-light'>LogIn</a></li>";
+                        }else{
+                            echo "<li class='tab col s3'><a id='logInLink' class='waves-effect waves-light'>".$_SESSION["username"]."</a></li>";
+                        }
+                    ?>
                 </ul>
 
                 <ul id="nav-mobile" class="side-nav">
@@ -79,7 +87,7 @@
                     </form>
                 </div>
 
-                <button id="logInButton" class="btn waves-effect waves-light" type="submit" name="action">Submit
+                <button id="signInButton" class="btn waves-effect waves-light" type="submit" name="action">Submit
                     <i class="material-icons right">send</i>
                 </button>
             </div>
@@ -122,13 +130,13 @@
 
         <script src="js/navbar.js"></script>
         <script>
-            $('#logInButton').bind('click', function (e) {
+            $('#signInButton').bind('click', function (e) {
                 var dataObject = { name: $('input.fullname').val(),
                    username:  $('input.username').val(),
                    pass: $('input.password').val(),
                    email: $('input.email').val()};
                 $.ajax({
-                    url: "attempts.php",
+                    url: "registerPHP.php",
                     type: 'POST',
                     data: dataObject,
                     success: function (data) {

@@ -33,7 +33,15 @@
                     <li><a id="eventsMobileLink" class="waves-effect waves-light">Events</a></li>
                     <li><a id="storeMobileLink" class="waves-effect waves-light">Store</a></li>
                     <li><a id="contactMobileLink" class="waves-effect waves-light">Contact</a></li>
-                    <li><a id="logInMobileLink" class="waves-effect waves-light">LogIn</a></li>
+                    <?php
+                        session_set_cookie_params(0);
+                        session_start();
+                        if(empty($_SESSION["username"])){
+                            echo "<li class='tab col s3'><a id='logInLink' class='waves-effect waves-light'>LogIn</a></li>";
+                        }else{
+                            echo "<li class='tab col s3'><a id='logInLink' class='waves-effect waves-light'>".$_SESSION["username"]."</a></li>";
+                        }
+                    ?>
                 </ul>
                 <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
             </div>
@@ -61,7 +69,7 @@
                             </div>
                         </div>
                         <div class="row">
-                            <a class="waves-effect waves-light btn"><i class="material-icons left">done</i>LogIn</a>
+                            <a id="logInButton" class="waves-effect waves-light btn"><i class="material-icons left">done</i>LogIn</a>
                         </div>
                     </form>
                 </div>
@@ -109,6 +117,26 @@
                 $("span.badge").css("color", "#fff");
             }, function () {
                 $("span.badge").css("color", "#26a69a");
+            });
+            $('#logInButton').bind('click', function (e) {
+                var dataObject = { 
+                   username:  $('input#username').val(),
+                   pass: $('input#password').val()};
+                $.ajax({
+                    url: "loginPHP.php",
+                    type: 'POST',
+                    data: dataObject,
+                    success: function (data) {
+                        if(data == "Success"){
+                            window.location.href = "../sistemas-avanzados/index.php";
+                        }else{
+                            Materialize.toast('Wrong user or password...', 3000);
+                        }
+                    },
+                    error: function(XMLHttpRequest, textStatus, errorThrown) { 
+                        alert("Status: " + textStatus); alert("Error: " + errorThrown); 
+                    }  
+                });
             });
         </script>
 

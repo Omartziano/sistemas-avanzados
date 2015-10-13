@@ -27,7 +27,15 @@
                     <li class="tab col s3"><a id="eventsLink" class="waves-effect waves-light">Events</a></li>
                     <li class="tab col s3"><a id="storeLink" class="active waves-effect waves-light">Store</a></li>
                     <li class="tab col s3"><a id="contactLink" class="waves-effect waves-light">Contact</a></li>
-                    <li class="tab col s3"><a id="logInLink" class="waves-effect waves-light">LogIn</a></li>
+                    <?php
+                        session_set_cookie_params(0);
+                        session_start();
+                        if(empty($_SESSION["username"])){
+                            echo "<li class='tab col s3'><a id='logInLink' class='waves-effect waves-light'>LogIn</a></li>";
+                        }else{
+                            echo "<li class='tab col s3'><a id='logInLink' class='waves-effect waves-light'>".$_SESSION["username"]."</a></li>";
+                        }
+                    ?>
                 </ul>
 
                 <ul id="nav-mobile" class="side-nav">

@@ -3,16 +3,17 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/xampp/htdocs/UAA/SistAvanzados/sistemas-avanzados/events.html</file>
-            <file>file:/C:/xampp/htdocs/UAA/SistAvanzados/sistemas-avanzados/index.html</file>
-            <file>file:/C:/xampp/htdocs/UAA/SistAvanzados/sistemas-avanzados/store.html</file>
-            <file>file:/C:/xampp/htdocs/UAA/SistAvanzados/sistemas-avanzados/contact.html</file>
+            <file>file:/C:/xampp/htdocs/UAA/SistAvanzados/sistemas-avanzados/store.php</file>
+            <file>file:/C:/xampp/htdocs/UAA/SistAvanzados/sistemas-avanzados/register.php</file>
+            <file>file:/C:/xampp/htdocs/UAA/SistAvanzados/sistemas-avanzados/index.php</file>
+            <file>file:/C:/xampp/htdocs/UAA/SistAvanzados/sistemas-avanzados/login.php</file>
+            <file>file:/C:/xampp/htdocs/UAA/SistAvanzados/sistemas-avanzados/events.php</file>
+            <file>file:/C:/xampp/htdocs/UAA/SistAvanzados/sistemas-avanzados/news.php</file>
             <file>file:/C:/xampp/htdocs/UAA/SistAvanzados/sistemas-avanzados/css/style.css</file>
-            <file>file:/C:/xampp/htdocs/UAA/SistAvanzados/sistemas-avanzados/login.html</file>
+            <file>file:/C:/xampp/htdocs/UAA/SistAvanzados/sistemas-avanzados/contact.php</file>
+            <file>file:/C:/xampp/htdocs/UAA/SistAvanzados/sistemas-avanzados/registerPHP.php</file>
             <file>file:/C:/xampp/htdocs/UAA/SistAvanzados/sistemas-avanzados/js/navbar.js</file>
-            <file>file:/C:/xampp/htdocs/UAA/SistAvanzados/sistemas-avanzados/includes/navbar.html</file>
-            <file>file:/C:/xampp/htdocs/UAA/SistAvanzados/sistemas-avanzados/news.html</file>
-            <file>file:/C:/xampp/htdocs/UAA/SistAvanzados/sistemas-avanzados/includes/footer.html</file>
+            <file>file:/C:/xampp/htdocs/UAA/SistAvanzados/sistemas-avanzados/loginPHP.php</file>
         </group>
     </open-files>
 </project-private>
