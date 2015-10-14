@@ -11,8 +11,6 @@
         <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
         <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 
-        <link href="css/bootstrap.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-        <link href="css/style2.css" rel='stylesheet' type='text/css' />  
         <script src="js/jquery-2.1.4.min.js"></script>
         <script src="js/materialize.js"></script>
         <script src="js/init.js"></script>
@@ -50,183 +48,78 @@
             </div>
         </nav>
 
-        <div class="container_formulario">
-<!--products-->
-    <div class="style2/products">
-        <div class="style2/container">
-            <div class="style2/products-grids">
-                <div class="col-md-8 products-grid-left">
-                    <div class="style2/products-grid-lft">
-                        <div class="products-grd">
-                            <div class="p-one simpleCart_shelfItem prd">
-                                <a href="#">
-                                        <img src="images/p4.jpg" alt="" class="img-responsive" />
-                                </a>
-                                <h4>Running Shoes</h4>
-                                <p><a class="item_add" href="#"><i class="glyphicon glyphicon-shopping-cart"></i> <span class=" item_price valsa">$729</span></a></p>
-                                <div class="pro-grd">
-                                    <a href="#">Quick View</a>
-                                </div>
-                            </div>  
-                        </div>
-                        <div class="products-grd">
-                            <div class="p-one simpleCart_shelfItem prd">
-                                <a href="#">
-                                        <img src="images/p6.jpg" alt="" class="img-responsive" />
-                                </a>
-                                <h4>Tote Bag</h4>
-                                <p><a class="item_add" href="#"><i class="glyphicon glyphicon-shopping-cart"></i> <span class=" item_price valsa">$729</span></a></p>
-                                <div class="pro-grd">
-                                    <a href="#">Quick View</a>
-                                </div>
-                            </div>  
-                        </div>
-                        <div class="clearfix"> </div>
-                    </div>
-                    <div class="products-grid-lft">
-                        <div class="products-grd">
-                            <div class="p-one simpleCart_shelfItem prd">
-                                <a href="#">
-                                        <img src="images/p9.jpg" alt="" class="img-responsive" />
-                                </a>
-                                <h4>Lifestyle Shoes</h4>    
-                                <p><a class="item_add" href="#"><i class="glyphicon glyphicon-shopping-cart"></i> <span class=" item_price valsa">$729</span></a></p>
-                                <div class="pro-grd">
-                                    <a href="#">Quick View</a>
-                                </div>
-                            </div>  
-                        </div>
-                        <div class="products-grd">
-                            <div class="p-one simpleCart_shelfItem prd">
-                                <a href="#">
-                                        <img src="images/p1.jpg" alt="" class="img-responsive" />
-                                </a>
-                                <h4>New style Bag</h4>
-                                <p><a class="item_add" href="#"><i class="glyphicon glyphicon-shopping-cart"></i> <span class=" item_price valsa">$729</span></a></p>
-                                <div class="pro-grd">
-                                    <a href="#">Quick View</a>
-                                </div>
-                            </div>  
-                        </div>
-                        <div class="products-grd">
-                            <div class="p-one simpleCart_shelfItem prd">
-                                <a href="#">
-                                        <img src="images/p3.jpg" alt="" class="img-responsive" />
-                                </a>
-                                <h4>Rim Frames</h4>
-                                <p><a class="item_add" href="#"><i class="glyphicon glyphicon-shopping-cart"></i> <span class=" item_price valsa">$729</span></a></p>
-                                <div class="pro-grd">
-                                    <a href="#">Quick View</a>
-                                </div>
-                            </div>  
-                        </div>
-                        <div class="clearfix"> </div>
-                    </div>
-                    <div class="products-grid-lft">
-                        <div class="products-grd">
-                            <div class="p-one simpleCart_shelfItem prd">
-                                <a href="#">
-                                        <img src="images/p2.jpg" alt="" class="img-responsive" />
-                                </a>
-                                <h4>Running Shoes</h4>
-                                <p><a class="item_add" href="#"><i class="glyphicon glyphicon-shopping-cart"></i> <span class=" item_price valsa">$729</span></a></p>
-                                <div class="pro-grd">
-                                    <a href="#">Quick View</a>
-                                </div>
-                            </div>  
-                        </div>
-                        <div class="products-grd">
-                            <div class="p-one simpleCart_shelfItem prd">
-                                <a href="#">
-                                        <img src="images/p7.jpg" alt="" class="img-responsive" />
-                                </a>
-                                <h4>Elevation Jacket</h4>
-                                <p><a class="item_add" href="#"><i class="glyphicon glyphicon-shopping-cart"></i> <span class=" item_price valsa">$729</span></a></p>
-                                <div class="pro-grd">
-                                    <a href="#">Quick View</a>
-                                </div>
-                            </div>  
-                        </div>
-                        <div class="products-grd">
-                            <div class="p-one simpleCart_shelfItem prd">
-                                <a href="#">
-                                        <img src="images/p9.jpg" alt="" class="img-responsive" />
-                                </a>
-                                <h4>Lifestyle Shoes</h4>
-                                <p><a class="item_add" href="#"><i class="glyphicon glyphicon-shopping-cart"></i> <span class=" item_price valsa">$729</span></a></p>
-                                <div class="pro-grd">
-                                    <a href="#">Quick View</a>
-                                </div>
-                            </div>  
-                        </div>
-                        <div class="clearfix"> </div>
-                    </div>
+     <div class="container">
+        <div class="row">
+
+          <div class="col s12 m4 l3"> <!-- Note that "m4 l3" was added -->
+            <!-- Grey navigation panel
+
+                  This content will be:
+              3-columns-wide on large screens,
+              4-columns-wide on medium screens,
+              12-columns-wide on small screens  -->
+
+              <ul class="collapsible" data-collapsible="accordion">
+                <li>
+                  <div class="collapsible-header"><i class="material-icons">reorder</i>Games</div>
+                  <div class="collapsible-body">
+                    <p>
+                        <input type="checkbox" id="Diablo" />
+                        <label for="Diablo">Diablo</label>
+                    </p>
+                    <p>
+                        <input type="checkbox" id="League of legends" />
+                        <label for="League of legends">League of legends</label>
+                    </p>
+                    <p>
+                        <input type="checkbox" id="Smite" />
+                        <label for="Smite">Smite</label>
+                    </p>
+                    <p>
+                        <input type="checkbox" id="Heroes of the Stotm" />
+                        <label for="Heroes of the Stotm">Heroes of the Stotm</label>
+                    </p>
+                    <p>
+                        <input type="checkbox" id="World of Warcraft" />
+                        <label for="World of Warcraft">World of Warcraft</label>
+                    </p>
                 </div>
-                                    <div class="col-md-4 products-grid-right">
-                    <div class="w_sidebar">
-                        <div class="w_nav1">
-                            <h4>All</h4>
-                            <ul>
-                                <li><a href="#">women</a></li>
-                                <li><a href="#">new fashions</a></li>
-                                <li><a href="#">trends</a></li>
-                                <li><a href="#">boys</a></li>
-                                <li><a href="#">girls</a></li>
-                                <li><a href="#">sale</a></li>
-                            </ul>   
-                        </div>
-                        <section  class="sky-form">
-                            <h4>catogories</h4>
-                            <div class="row1 scroll-pane">
-                                <div class="col col-4">
-                                    <label class="checkbox"><input type="checkbox" name="checkbox" checked=""><i></i>Men's Jackets</label>
-                                </div>
-                                <div class="col col-4">
-                                    <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Shoes</label>
-                                    <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Glases</label>
-                                    <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Watches</label>
-                                    <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Hand Bags</label>
-                                    <label class="checkbox"><input type="checkbox" name="checkbox" ><i></i>Bags</label>
-                                    <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>shirts</label>
-                                    <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>tempore</label>
-                                    <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>soluta nobis</label>
-                                    <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>molestiae</label>
-                                    <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>repudiandae sint</label>
-                                    <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>nobis est</label>
-                                    <label class="checkbox"><input type="checkbox" name="checkbox" ><i></i>assumenda est</label>
-                                    <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Anouk</label>
-                                    <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>tempore</label>
-                                </div>
-                            </div>
-                        </section>
-                        <section  class="sky-form">
-                            <h4>brand</h4>
-                            <div class="row1 scroll-pane">
-                                <div class="col col-4">
-                                    <label class="checkbox"><input type="checkbox" name="checkbox" checked=""><i></i>Lee</label>
-                                    <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Anouk</label>
-                                    <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>tempore</label>
-                                </div>
-                                <div class="col col-4">
-                                    <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>vishud</label>
-                                    <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>amari</label>
-                                    <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>shree</label>
-                                    <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Anouk</label>
-                                    <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>biba</label>
-                                    <label class="checkbox"><input type="checkbox" name="checkbox" ><i></i>shree</label>
-                                    <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Anouk</label>                                                                                         
-                                </div>
-                            </div>
-                        </section>
-                    </div>
+                </li>
+                <li>
+                  <div class="collapsible-header"><i class="material-icons">reorder</i>Collectibles</div>
+                  <div class="collapsible-body">
+                    <p>
+                        <input type="checkbox" id="Plush" />
+                        <label for="Plush">Plush</label>
+                    </p>
+                    <p>
+                        <input type="checkbox" id="Figures" />
+                        <label for="Figures">Figures</label>
+                    </p>
+                    <p>
+                        <input type="checkbox" id="Statues" />
+                        <label for="Statues">Statues</label>
+                    </p>
                 </div>
-                <div class="clearfix"></div>
-            </div>
-        </div>
-    </div>
-<!-- //products -->
+                </li>
+              </ul>
+                                  
+          </div>
+
+          <div class="col s12 m8 l9"> <!-- Note that "m8 l9" was added -->
+            <!-- Teal page content
+
+                  This content will be:
+              9-columns-wide on large screens,
+              8-columns-wide on medium screens,
+              12-columns-wide on small screens  -->
+
+          </div>
 
         </div>
+
+    </div>
+
 
         <footer class="page-footer teal">
             <div class="container">
