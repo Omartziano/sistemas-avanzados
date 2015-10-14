@@ -17,20 +17,20 @@
     <body>
         <nav class="black" role="navigation">
             <div class="nav-wrapper container">
-                <a id="logo-container" href="../sistemas-avanzados/index.html" class="brand-logo"><img src="img/logo/porosunnyrays.png" class="display-logo"/><span>Doran Took My Money</span></a>
+                <a id="logo-container" href="../sistemas-avanzados/index.php" class="brand-logo"><img src="img/logo/porosunnyrays.png" class="display-logo"/><span>Doran Took My Money</span></a>
                 <ul class="right hide-on-med-and-down tabs">
                     <li class="tab col s3"><a href="#" class="waves-effect waves-light">Home</a></li>
                     <li class="tab col s3"><a href="#" class="waves-effect waves-light">News</a></li>
                     <li class="tab col s3"><a href="#" class="waves-effect waves-light">Events</a></li>
                     <li class="tab col s3"><a href="#" class="waves-effect waves-light">Store</a></li>
-                    <li class="tab col s3"><a href="#" class="active waves-effect waves-light">Contact</a></li>
+                    <li class="tab col s3"><a href="#" class="waves-effect waves-light">Contact</a></li>
                     <?php
                         session_set_cookie_params(0);
                         session_start();
                         if(empty($_SESSION["username"])){
-                            echo "<li class='tab col s3'><a id='logInLink' class='waves-effect waves-light'>LogIn</a></li>";
+                            echo "<li class='tab col s3'><a id='logInLink' class='active waves-effect waves-light'>LogIn</a></li>";
                         }else{
-                            echo "<li class='tab col s3'><a id='logInLink' class='waves-effect waves-light'>".$_SESSION["username"]."</a></li>";
+                            echo "<li class='tab col s3'><a id='logInLink' class='active waves-effect waves-light'>".$_SESSION["username"]."</a></li>";
                         }
                     ?>
                 </ul>
@@ -103,11 +103,11 @@
                     <div class="col l3 s12">
                         <h5 class="white-text">Sitemap</h5>
                         <ul>
-                            <li><a class="white-text" href="../sistemas-avanzados/news.html">News</a></li>
-                            <li><a class="white-text" href="../sistemas-avanzados/events.html">Events</a></li>
-                            <li><a class="white-text" href="../sistemas-avanzados/store.html">Store</a></li>
-                            <li><a class="white-text" href="../sistemas-avanzados/contact.html">Contact</a></li>
-                            <!--<li><a class="white-text" href="../sistemas-avanzados/news.html">FAQs</a></li>-->
+                            <li><a class="white-text" href="../sistemas-avanzados/news.php">News</a></li>
+                            <li><a class="white-text" href="../sistemas-avanzados/events.php">Events</a></li>
+                            <li><a class="white-text" href="../sistemas-avanzados/store.php">Store</a></li>
+                            <li><a class="white-text" href="../sistemas-avanzados/contact.php">Contact</a></li>
+                            <!--<li><a class="white-text" href="../sistemas-avanzados/news.php">FAQs</a></li>-->
                         </ul>
                     </div>
                     <div class="col l3 s12">

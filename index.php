@@ -17,7 +17,7 @@
     <body>
         <nav class="black" role="navigation">
             <div class="nav-wrapper container">
-                <a id="logo-container" href="../sistemas-avanzados/index.html" class="brand-logo"><img src="img/logo/porosunnyrays.png" class="display-logo"/><span>Doran Took My Money</span></a>
+                <a id="logo-container" href="../sistemas-avanzados/index.php" class="brand-logo"><img src="img/logo/porosunnyrays.png" class="display-logo"/><span>Doran Took My Money</span></a>
                 <ul class="right hide-on-med-and-down tabs">
                     <li class="tab col s3"><a id="homeLink" class="active waves-effect waves-light">Home</a></li>
                     <li class="tab col s3"><a id="newsLink" class="waves-effect waves-light">News</a></li>
@@ -105,7 +105,7 @@
                             </div>
                             <div class="card-content">
                                 <span class="card-title activator grey-text text-darken-4">Champion and skin sale: 09.25 - 09.28<i class="material-icons right">more_vert</i></span>
-                                <p><a href="#">Read More...</a></p>
+                                <p><a href="http://na.leagueoflegends.com/en/news/store/sales/champion-and-skin-sale-0925-0928">Read More...</a></p>
                             </div>
                             <div class="card-reveal">
                                 <span class="card-title grey-text text-darken-4">Champion and skin sale: 09.25 - 09.28<i class="material-icons right">close</i></span>
@@ -121,7 +121,7 @@
                             </div>
                             <div class="card-content">
                                 <span class="card-title activator grey-text text-darken-4">It’s time for September bundles and Mystery skins!<i class="material-icons right">more_vert</i></span>
-                                <p><a href="#">Read More...</a></p>
+                                <p><a href="http://na.leagueoflegends.com/en/news/store/sales/its-time-september-bundles-and-mystery-skins">Read More...</a></p>
                             </div>
                             <div class="card-reveal">
                                 <span class="card-title grey-text text-darken-4">It’s time for September bundles and Mystery skins!<i class="material-icons right">close</i></span>
@@ -133,15 +133,15 @@
                     <div class="col s12 m4">
                         <div class="card hoverable">
                             <div class="card-image waves-effect waves-block waves-light">
-                                <img class="activator" src="img/news/blog_frankfurt_major_announcement.jpg">
+                                <img class="activator" src="img/news/kayle_0_base_1920_2_0.jpg">
                             </div>
                             <div class="card-content">
-                                <span class="card-title activator grey-text text-darken-4">Announcing The Frankfurt Major<i class="material-icons right">more_vert</i></span>
-                                <p><a href="#">Read More...</a></p>
+                                <span class="card-title activator grey-text text-darken-4">Positive play icon unlocked<i class="material-icons right">more_vert</i></span>
+                                <p><a href="http://na.leagueoflegends.com/en/news/game-updates/player-behavior/positive-play-icon-unlocked">Read More...</a></p>
                             </div>
                             <div class="card-reveal">
-                                <span class="card-title grey-text text-darken-4">Announcing The Frankfurt Major<i class="material-icons right">close</i></span>
-                                <p>Attendance to the Frankfurt Major will be open to the public and will not require a ticket for any day except for the day of the finals, which will take place on Saturday, November 21st. </p>
+                                <span class="card-title grey-text text-darken-4">Positive play icon unlocked<i class="material-icons right">close</i></span>
+                                <p>When 5.18 dropped, we powered up the instant feedback system and shared that positive players would earn an exclusive Summoner Icon.</p>
                             </div>
                         </div>
                     </div>
@@ -155,7 +155,7 @@
                             </div>
                             <div class="card-content">
                                 <span class="card-title activator grey-text text-darken-4">Gameplay Update 6.85 and More<i class="material-icons right">more_vert</i></span>
-                                <p><a href="#">Read More...</a></p>
+                                <p><a href="http://blog.dota2.com/2015/09/gameplay-update-6-85-and-more/">Read More...</a></p>
                             </div>
                             <div class="card-reveal">
                                 <span class="card-title grey-text text-darken-4">Gameplay Update 6.85 and More<i class="material-icons right">close</i></span>
@@ -171,7 +171,7 @@
                             </div>
                             <div class="card-content">
                                 <span class="card-title activator grey-text text-darken-4">Reborn has arrived<i class="material-icons right">more_vert</i></span>
-                                <p><a href="#">Read More...</a></p>
+                                <p><a href="http://blog.dota2.com/2015/09/reborn-has-arrived/">Read More...</a></p>
                             </div>
                             <div class="card-reveal">
                                 <span class="card-title grey-text text-darken-4">Reborn has arrived<i class="material-icons right">close</i></span>
@@ -187,7 +187,7 @@
                             </div>
                             <div class="card-content">
                                 <span class="card-title activator grey-text text-darken-4">PATCH 2.3.0 NOW LIVE<i class="material-icons right">more_vert</i></span>
-                                <p><a href="#">Read More...</a></p>
+                                <p><a href="http://us.battle.net/d3/en/blog/19859662/patch-230-now-live-8-25-2015">Read More...</a></p>
                             </div>
                             <div class="card-reveal">
                                 <span class="card-title grey-text text-darken-4">PATCH 2.3.0 NOW LIVE<i class="material-icons right">close</i></span>
@@ -299,11 +299,11 @@
                     <div class="col l3 s12">
                         <h5 class="white-text">Sitemap</h5>
                         <ul>
-                            <li><a class="white-text" href="../sistemas-avanzados/news.html">News</a></li>
-                            <li><a class="white-text" href="../sistemas-avanzados/events.html">Events</a></li>
-                            <li><a class="white-text" href="../sistemas-avanzados/store.html">Store</a></li>
-                            <li><a class="white-text" href="../sistemas-avanzados/contact.html">Contact</a></li>
-                            <!--<li><a class="white-text" href="../sistemas-avanzados/news.html">FAQs</a></li>-->
+                            <li><a class="white-text" href="../sistemas-avanzados/news.php">News</a></li>
+                            <li><a class="white-text" href="../sistemas-avanzados/events.php">Events</a></li>
+                            <li><a class="white-text" href="../sistemas-avanzados/store.php">Store</a></li>
+                            <li><a class="white-text" href="../sistemas-avanzados/contact.php">Contact</a></li>
+                            <!--<li><a class="white-text" href="../sistemas-avanzados/news.php">FAQs</a></li>-->
                         </ul>
                     </div>
                     <div class="col l3 s12">
