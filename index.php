@@ -30,7 +30,7 @@
                         if(empty($_SESSION["username"])){
                             echo "<li class='tab col s3'><a id='logInLink' class='waves-effect waves-light'>LogIn</a></li>";
                         }else{
-                            echo "<li class='tab col s3'><a id='logInLink' class='waves-effect waves-light'>".$_SESSION["username"]."</a></li>";
+                            echo "<li class='tab col s3'><a id='logInLink' class='waves-effect waves-light' style='font-size: 10px'>".$_SESSION["username"]."</a></li>";
                         }
                     ?>
                     <!--<li class="tab col s3"><a id="logInLink" class="waves-effect waves-light">LogIn</a></li>-->

@@ -31,7 +31,7 @@
                     if (empty($_SESSION["username"])) {
                         echo "<li class='tab col s3'><a id='logInLink' class='waves-effect waves-light'>LogIn</a></li>";
                     } else {
-                        echo "<li class='tab col s3'><a id='logInLink' class='waves-effect waves-light'>" . $_SESSION["username"] . "</a></li>";
+                        echo "<li class='tab col s3'><a id='logInLink' class='waves-effect waves-light' style='font-size: 10px'>".$_SESSION["username"]."</a></li>";
                     }
                     ?>
                 </ul>
@@ -115,9 +115,10 @@
                                             <div class="col s12 m4">
                                                 <div class="hoverable icon-block">
                                                     <h2 class="center brown-text"><img class="activator" src="data:image/jpg; base64, <?php echo base64_encode($datos->imagenProducto);?>" /></h2>
-                                                    <h5 class="center"><?php echo $datos->nombreProducto;?></h5>
-                                                    <p class="center"><?php echo $datos->precioProducto;?></p>
-                                                    <p class="center"><?php echo $datos->existenciaProducto;?></p>
+                                                    <h5><?php echo $datos->nombreProducto;?></h5>
+                                                    <hr>
+                                                    <p><span class="store-card-price">$<?php echo $datos->precioProducto;?></span></p>
+                                                    <p><?php echo $datos->existenciaProducto;?> items in stock</p>
                                                 </div>
                                             </div>
                                     <?php

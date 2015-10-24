@@ -70,6 +70,7 @@
                         </div>
                         <div class="row">
                             <a id="logInButton" class="waves-effect waves-light btn"><i class="material-icons left">done</i>LogIn</a>
+                            <p>You're not a member yet?</p>
                             <a href="../sistemas-avanzados/register.php" class="waves-effect waves-light btn"><i class="material-icons left">done</i>Register</a>
                         </div>
                     </form>

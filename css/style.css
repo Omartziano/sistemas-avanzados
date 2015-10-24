@@ -40,6 +40,20 @@ nav .tabs{
     color: #009688;
 }
 
+.icon-block .store-card-price{
+    color: #009688;
+}
+
+.icon-block p{
+    line-height: 1rem;
+}
+
+.icon-block p:last-child{
+    font-size: 14px;
+    color: #bcaaa4 !important;
+    padding-bottom: 5px;
+}
+
 ul.collapsible .collapsible-header img{
     margin-top: 15px;
     margin-bottom: -15px!important;
