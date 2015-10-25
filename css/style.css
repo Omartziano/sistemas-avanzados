@@ -44,11 +44,21 @@ nav .tabs{
     color: #009688;
 }
 
+.icon-block .store-card-price-big{
+    color: #009688;
+    font-size: 28px;
+    line-height: 2rem;
+}
+
 .icon-block p{
     line-height: 0.5rem;
 }
 
-.icon-block p:last-child{
+.icon-block p.description{
+    line-height: 1.3rem;
+}
+
+.secondary-product-info{
     font-size: 14px;
     color: #bcaaa4 !important;
     padding-bottom: 10px;
@@ -139,6 +149,10 @@ p {
 .icon-block .material-icons {
   font-size: inherit;
 }
+
+.collapsible .store-collapsible{
+    background-color: #009688!important;
+    color: #fff!important;}
 
 footer.page-footer {
   margin: 0;

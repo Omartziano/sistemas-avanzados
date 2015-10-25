@@ -31,7 +31,7 @@
                     if (empty($_SESSION["username"])) {
                         echo "<li class='tab col s3'><a id='logInLink' class='waves-effect waves-light'>LogIn</a></li>";
                     } else {
-                        echo "<li class='tab col s3'><a id='logInLink' class='waves-effect waves-light' style='font-size: 10px'>".$_SESSION["username"]."</a></li>";
+                        echo "<li class='tab col s3'><a id='logInLink' class='waves-effect waves-light' style='font-size: 10px'>" . $_SESSION["username"] . "</a></li>";
                     }
                     ?>
                 </ul>
@@ -51,9 +51,9 @@
         <div class="container">
             <div class="row">
                 <div class="col s12 m4 l3"> <!-- Note that "m4 l3" was added -->
-                    <ul class="collapsible" data-collapsible="accordion">
+                    <ul class="collapsible" data-collapsible="expansible">
                         <li>
-                            <div class="collapsible-header"><i class="material-icons">reorder</i>Games</div>
+                            <div class="collapsible-header store-collapsible active"><i class="material-icons">reorder</i>Games</div>
                             <div class="collapsible-body">
                                 <p>
                                     <input type="checkbox" id="Diablo" />
@@ -78,7 +78,7 @@
                             </div>
                         </li>
                         <li>
-                            <div class="collapsible-header"><i class="material-icons">reorder</i>Collectibles</div>
+                            <div class="collapsible-header store-collapsible active"><i class="material-icons">reorder</i>Collectibles</div>
                             <div class="collapsible-body">
                                 <p>
                                     <input type="checkbox" id="Plush" />
@@ -98,54 +98,35 @@
                 </div>
                 <div class="col s12 m8 l9"> <!-- Note that "m4 l3" was added -->
                     <div class="row">
-                                    <?php
-                                        $servername = "localhost";
-                                        $username = "root";
-                                        $password = "";
-                                        $dbname = "sistemas avanzados";
-                                        $conn = new mysqli($servername, $username, $password, $dbname);
-                                        if ($conn->connect_error) {
-                                            die("Connection failed: " . $conn->connect_error);
-                                        }
-                                        $sql = "SELECT nombreProducto, precioProducto, existenciaProducto, imagenProducto FROM producto;";
-                                        //$stringResult;
-                                        $results = $conn->query($sql);
-                                        while($datos = $results->fetch_object()){
-                                        ?>
-                                            <div class="col s12 m4">
-                                                <div class="hoverable icon-block">
-                                                    <h2 class="center brown-text"><img class="activator" src="data:image/jpg; base64, <?php echo base64_encode($datos->imagenProducto);?>" /></h2>
-                                                    <h5><?php echo $datos->nombreProducto;?></h5>
-                                                    <hr>
-                                                    <p><span class="store-card-price">$<?php echo $datos->precioProducto;?></span></p>
-                                                    <p><?php echo $datos->existenciaProducto;?> items in stock</p>
-                                                </div>
-                                            </div>
-                                    <?php
-                                        }
-                                    ?>
-
-<!--                        <div class="col s12 m4">
-                            <div class="hoverable icon-block">
-                                <h2 class="center brown-text"><img class="activator" src="img/products/corkiflyerhoodie_unisex_1.png"></h2>
-                                <h5 class="center">Corki Flyer Hoodie (Unisex)</h5>
-                                <p class="center">US$45.00</p>
+                        <?php
+                        $servername = "localhost";
+                        $username = "root";
+                        $password = "";
+                        $dbname = "sistemas avanzados";
+                        $conn = new mysqli($servername, $username, $password, $dbname);
+                        if ($conn->connect_error) {
+                            die("Connection failed: " . $conn->connect_error);
+                        }
+                        $sql = "SELECT nombreProducto, precioProducto, existenciaProducto, imagenProducto FROM producto;";
+                        //$stringResult;
+                        $results = $conn->query($sql);
+                        while ($datos = $results->fetch_object()) {
+                            ?>
+                            <div class="col s12 m4">
+                                <div id="<?php echo $datos->nombreProducto; ?>" class="hoverable icon-block productDetails">
+                                    <h2 class="center brown-text"><img class="activator" src="data:image/jpg; base64, <?php echo base64_encode($datos->imagenProducto); ?>" /></h2>
+                                    <h5><?php echo $datos->nombreProducto; ?></h5>
+                                    <hr>
+                                    <p><span class="store-card-price">$<?php echo $datos->precioProducto; ?></span></p>
+                                    <p class="secondary-product-info"><?php echo $datos->existenciaProducto; ?> items in stock</p>
+                                </div>
                             </div>
-                        </div>
-
-                        <div class="col s12 m4">
-                            <div class="hoverable icon-block">
-                                <h2 class="center brown-text"><img class="activator" src="img/products/twistedfateshirtfront_1_.png"></h2>
-                                <h5 class="center">Twisted Fate Tee (unisex)</h5>
-                                <p class="center">US$25.00 <br>Out of stock</p>
-                            </div>
-                        </div>-->
+                            <?php
+                        }
+                        ?>
                     </div>
                 </div>
             </div>
-<!--            <div class="row">
-                <a id="getProducts" class="waves-effect waves-light btn"><i class="material-icons left">done</i>LogIn</a>
-            </div>-->
         </div>
 
 
@@ -204,6 +185,24 @@
                     }
                 });
             });
+            $(document).on("click", ".productDetails", function () {
+                window.location.href = "../sistemas-avanzados/productDetails.php?prodId="+$(this).attr('id');
+                //console.log($(this).attr('id'));
+            });
+            /*function getUrlParameter(sParam) {
+                var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+                        sURLVariables = sPageURL.split('&'),
+                        sParameterName,
+                        i;
+
+                for (i = 0; i < sURLVariables.length; i++) {
+                    sParameterName = sURLVariables[i].split('=');
+
+                    if (sParameterName[0] === sParam) {
+                        return sParameterName[1] === undefined ? true : sParameterName[1];
+                    }
+                }
+            }*/
         </script>
     </body>
 </html>
