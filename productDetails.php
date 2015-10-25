@@ -31,7 +31,7 @@
                     if (empty($_SESSION["username"])) {
                         echo "<li class='tab col s3'><a id='logInLink' class='waves-effect waves-light'>LogIn</a></li>";
                     } else {
-                        echo "<li class='tab col s3'><a id='logInLink' class='waves-effect waves-light' style='font-size: 10px'>".$_SESSION["username"]."</a></li>";
+                        echo "<li class='tab col s3'><a id='logInLink' class='waves-effect waves-light' style='font-size: 10px'>" . $_SESSION["username"] . "</a></li>";
                     }
                     ?>
                 </ul>
@@ -49,61 +49,60 @@
         </nav>
 
         <div class="container">
-            <div class="row">
-                <div class="col s12"> <!-- Note that "m4 l3" was added -->
-                    <div class="row">
-                                    <?php
-                                        $servername = "localhost";
-                                        $username = "root";
-                                        $password = "";
-                                        $dbname = "sistemas avanzados";
-                                        $conn = new mysqli($servername, $username, $password, $dbname);
-                                        if ($conn->connect_error) {
-                                            die("Connection failed: " . $conn->connect_error);
-                                        }
-                                        $sql = "SELECT nombreProducto, precioProducto, existenciaProducto, imagenProducto FROM producto;";
-                                        //$stringResult;
-                                        $results = $conn->query($sql);
-                                        while($datos = $results->fetch_object()){
-                                        ?>
-                                            <div class="col s12 m6">
-                                                <div class="hoverable icon-block">
-                                                    <h2 class="center brown-text"><img class="activator" src="data:image/jpg; base64, <?php echo base64_encode($datos->imagenProducto);?>" /></h2>
-                                                </div>
-                                            </div>
-                                            <div class="col s12 m6">
-                                                <div class="hoverable icon-block">
-                                                    <h5><?php echo $datos->nombreProducto;?></h5>
-                                                    <hr>
-                                                    <p><span class="store-card-price">$<?php echo $datos->precioProducto;?></span></p>
-                                                    <p><?php echo $datos->existenciaProducto;?> items in stock</p>
-                                                </div>
-                                            </div>
-                                    <?php
-                                        }
-                                    ?>
-
-<!--                        <div class="col s12 m4">
-                            <div class="hoverable icon-block">
-                                <h2 class="center brown-text"><img class="activator" src="img/products/corkiflyerhoodie_unisex_1.png"></h2>
-                                <h5 class="center">Corki Flyer Hoodie (Unisex)</h5>
-                                <p class="center">US$45.00</p>
-                            </div>
+            <div class="row valign-wrapper">
+                <?php
+                $servername = "localhost";
+                $username = "root";
+                $password = "";
+                $dbname = "sistemas avanzados";
+                $productID = $_GET['prodId'];
+                $conn = new mysqli($servername, $username, $password, $dbname);
+                if ($conn->connect_error) {
+                    die("Connection failed: " . $conn->connect_error);
+                }
+                $sql = "SELECT nombreProducto, categoriaProducto, precioProducto, existenciaProducto, DescripcionProducto, idJuegoProducto, imagenProducto FROM producto where nombreProducto = '" . $productID . "';";
+                $results = $conn->query($sql);
+                while ($datos = $results->fetch_object()) {
+                    ?>
+                    <div class="col s12 m6">
+                        <div class="hoverable icon-block">
+                            <h2 class="center brown-text"><img class="activator" src="data:image/jpg; base64, <?php echo base64_encode($datos->imagenProducto); ?>" /></h2>
                         </div>
-
-                        <div class="col s12 m4">
-                            <div class="hoverable icon-block">
-                                <h2 class="center brown-text"><img class="activator" src="img/products/twistedfateshirtfront_1_.png"></h2>
-                                <h5 class="center">Twisted Fate Tee (unisex)</h5>
-                                <p class="center">US$25.00 <br>Out of stock</p>
-                            </div>
-                        </div>-->
                     </div>
-                </div>
+                    <div class="col s12 m6">
+                        <div class="icon-block valign">
+                            <h5><?php echo $datos->nombreProducto; ?></h5>
+                            <hr>
+                            <h6><span class="secondary-product-info">Category: </span>
+                                <span class="store-card-price"><?php
+                                    //echo $datos->nombreProducto; 
+                                    $sql1 = "SELECT nombre_Categoria FROM categoria_producto where idCategoria_Producto = '" . $datos->categoriaProducto . "';";
+                                    $results1 = $conn->query($sql1);
+                                    $datos1 = $results1->fetch_object();
+                                    echo $datos1->nombre_Categoria;
+                                    ?></span>
+                            </h6>
+                            <h6><span class="secondary-product-info">Provided by: </span>  
+                                <span class="store-card-price"><?php
+                                    //echo $datos->nombreProducto; 
+                                    $sql1 = "SELECT nombreJuego FROM juego where idJuego = '" . $datos->idJuegoProducto . "';";
+                                    $results1 = $conn->query($sql1);
+                                    $datos1 = $results1->fetch_object();
+                                    echo $datos1->nombreJuego;
+                                    ?></span>
+                            </h6>
+                            <p class="description"><?php echo $datos->DescripcionProducto; ?></p>
+                            <p><span class="store-card-price-big">$<?php echo $datos->precioProducto; ?></span></p>
+                            <p class="secondary-product-info"><?php echo $datos->existenciaProducto; ?> items in stock</p>
+                            <button class="btn waves-effect waves-light" type="submit" name="action">Add to Cart
+                                <i class="material-icons right">shopping_cart</i>
+                            </button>
+                        </div>
+                    </div>
+                    <?php
+                }
+                ?>
             </div>
-<!--            <div class="row">
-                <a id="getProducts" class="waves-effect waves-light btn"><i class="material-icons left">done</i>LogIn</a>
-            </div>-->
         </div>
 
 
