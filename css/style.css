@@ -45,13 +45,19 @@ nav .tabs{
 }
 
 .icon-block p{
-    line-height: 1rem;
+    line-height: 0.5rem;
 }
 
 .icon-block p:last-child{
     font-size: 14px;
     color: #bcaaa4 !important;
-    padding-bottom: 5px;
+    padding-bottom: 10px;
+}
+
+.icon-block hr{
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(105, 105, 105, 0.75), rgba(0, 0, 0, 0));
 }
 
 ul.collapsible .collapsible-header img{
