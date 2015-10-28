@@ -166,43 +166,9 @@
         </footer>
         <script src="js/navbar.js"></script>
         <script>
-            $('#getProducts').bind('click', function (e) {
-                $.ajax({
-                    url: "getStoreProducts.php",
-                    type: 'GET',
-                    success: function (data) {
-                        if (data == "Success") {
-                            //window.location.href = "../sistemas-avanzados/index.php";
-                            console.log(data);
-                        } else {
-                            Materialize.toast('Wrong user or password...', 3000);
-                            console.log(data);
-                        }
-                    },
-                    error: function (XMLHttpRequest, textStatus, errorThrown) {
-                        alert("Status: " + textStatus);
-                        alert("Error: " + errorThrown);
-                    }
-                });
-            });
             $(document).on("click", ".productDetails", function () {
                 window.location.href = "../sistemas-avanzados/productDetails.php?prodId="+$(this).attr('id');
-                //console.log($(this).attr('id'));
             });
-            /*function getUrlParameter(sParam) {
-                var sPageURL = decodeURIComponent(window.location.search.substring(1)),
-                        sURLVariables = sPageURL.split('&'),
-                        sParameterName,
-                        i;
-
-                for (i = 0; i < sURLVariables.length; i++) {
-                    sParameterName = sURLVariables[i].split('=');
-
-                    if (sParameterName[0] === sParam) {
-                        return sParameterName[1] === undefined ? true : sParameterName[1];
-                    }
-                }
-            }*/
         </script>
     </body>
 </html>

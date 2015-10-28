@@ -69,8 +69,8 @@
                             <h2 class="center brown-text"><img class="activator" src="data:image/jpg; base64, <?php echo base64_encode($datos->imagenProducto); ?>" /></h2>
                         </div>
                     </div>
-                    <div class="col s12 m6">
-                        <div class="icon-block valign">
+                    <div class="col s12 m6 valign">
+                        <div class="icon-block">
                             <h5><?php echo $datos->nombreProducto; ?></h5>
                             <hr>
                             <h6><span class="secondary-product-info">Category: </span>
@@ -94,74 +94,119 @@
                             <p class="description"><?php echo $datos->DescripcionProducto; ?></p>
                             <p><span class="store-card-price-big">$<?php echo $datos->precioProducto; ?></span></p>
                             <p class="secondary-product-info"><?php echo $datos->existenciaProducto; ?> items in stock</p>
-                            <button class="btn waves-effect waves-light" type="submit" name="action">Add to Cart
-                                <i class="material-icons right">shopping_cart</i>
-                            </button>
+                            <div class="valign-wrapper">
+                                <div class="input-field col s4">
+                                    <select class="prodQuantity">
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                    </select>
+                                    <label>Quantity</label>
+                                </div>
+                                <button id="addProductToCart" class="col s8 btn waves-effect waves-light valign" type="submit" name="action">Add to Cart
+                                    <i class="material-icons right">shopping_cart</i>
+                                </button>
+                            </div>
                         </div>
                     </div>
-                    <?php
-                }
-                ?>
+                </div>
+                <?php
+            }
+            ?>
+        </div>
+    </div>
+
+
+    <footer class="page-footer teal">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="white-text">Who we are?</h5>
+                    <p class="grey-text text-lighten-4">We are a team of college students working on this project like it's our full time job.</p>
+                </div>
+                <div class="col l3 s12">
+                    <h5 class="white-text">Sitemap</h5>
+                    <ul>
+                        <li><a class="white-text" href="../sistemas-avanzados/news.php">News</a></li>
+                        <li><a class="white-text" href="../sistemas-avanzados/events.php">Events</a></li>
+                        <li><a class="white-text" href="../sistemas-avanzados/store.php">Store</a></li>
+                        <li><a class="white-text" href="../sistemas-avanzados/contact.php">Contact</a></li>
+                        <!--<li><a class="white-text" href="../sistemas-avanzados/news.php">FAQs</a></li>-->
+                    </ul>
+                </div>
+                <div class="col l3 s12">
+                    <h5 class="white-text">External</h5>
+                    <ul>
+                        <li><a class="white-text" href="http://na.leagueoflegends.com/">League Of Legends</a></li>
+                        <li><a class="white-text" href="http://blog.dota2.com/">Dota 2</a></li>
+                        <li><a class="white-text" href="http://us.battle.net/d3/en/">Diablo III</a></li>
+                        <li><a class="white-text" href="http://www.smitegame.com/">Smite</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
-
-
-        <footer class="page-footer teal">
+        <div class="footer-copyright">
             <div class="container">
-                <div class="row">
-                    <div class="col l6 s12">
-                        <h5 class="white-text">Who we are?</h5>
-                        <p class="grey-text text-lighten-4">We are a team of college students working on this project like it's our full time job.</p>
-                    </div>
-                    <div class="col l3 s12">
-                        <h5 class="white-text">Sitemap</h5>
-                        <ul>
-                            <li><a class="white-text" href="../sistemas-avanzados/news.php">News</a></li>
-                            <li><a class="white-text" href="../sistemas-avanzados/events.php">Events</a></li>
-                            <li><a class="white-text" href="../sistemas-avanzados/store.php">Store</a></li>
-                            <li><a class="white-text" href="../sistemas-avanzados/contact.php">Contact</a></li>
-                            <!--<li><a class="white-text" href="../sistemas-avanzados/news.php">FAQs</a></li>-->
-                        </ul>
-                    </div>
-                    <div class="col l3 s12">
-                        <h5 class="white-text">External</h5>
-                        <ul>
-                            <li><a class="white-text" href="http://na.leagueoflegends.com/">League Of Legends</a></li>
-                            <li><a class="white-text" href="http://blog.dota2.com/">Dota 2</a></li>
-                            <li><a class="white-text" href="http://us.battle.net/d3/en/">Diablo III</a></li>
-                            <li><a class="white-text" href="http://www.smitegame.com/">Smite</a></li>
-                        </ul>
-                    </div>
-                </div>
+                Made by Electronic Systems Department - <a class="brown-text text-lighten-3" href="http://www.uaa.mx/">Universidad Autónoma de México</a>
             </div>
-            <div class="footer-copyright">
-                <div class="container">
-                    Made by Electronic Systems Department - <a class="brown-text text-lighten-3" href="http://www.uaa.mx/">Universidad Autónoma de México</a>
-                </div>
-            </div>
-        </footer>
-        <script src="js/navbar.js"></script>
-        <script>
-            $('#getProducts').bind('click', function (e) {
-                $.ajax({
-                    url: "getStoreProducts.php",
-                    type: 'GET',
-                    success: function (data) {
-                        if (data == "Success") {
-                            //window.location.href = "../sistemas-avanzados/index.php";
-                            console.log(data);
-                        } else {
-                            Materialize.toast('Wrong user or password...', 3000);
-                            console.log(data);
-                        }
-                    },
-                    error: function (XMLHttpRequest, textStatus, errorThrown) {
-                        alert("Status: " + textStatus);
-                        alert("Error: " + errorThrown);
-                    }
-                });
+        </div>
+    </footer>
+    <script src="js/navbar.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('select').material_select();
+        });
+        (function ($) {
+            var $window = $(window),
+                    $row = $('.container .row');
+            $(window).on('resize', function () {
+                if ($window.width() < 601) {
+                    $row.removeClass('valign-wrapper');
+                } else
+                    $row.addClass('valign-wrapper');
             });
-        </script>
-    </body>
+        }(jQuery));
+        $(document).on("click", "#addProductToCart", function () {
+            var dataObject = {
+                prodID: getUrlParameter('prodId'),
+                prodDesc: $('p.description').text(),
+                prodPrice: $('span.store-card-price-big').text(),
+                qty: $('.prodQuantity').eq(1).val()};
+            $.ajax({
+                url: "addToCartPHP.php",
+                type: 'POST',
+                data: dataObject,
+                success: function (data) {
+                    //alert("Success");
+                    /*if(data == "Success"){
+                     window.location.href = "../sistemas-avanzados/index.php";
+                     }else{
+                     Materialize.toast('Wrong user or password...', 3000);
+                     }*/
+                },
+                error: function (XMLHttpRequest, textStatus, errorThrown) {
+                    alert("Status: " + textStatus);
+                    alert("Error: " + errorThrown);
+                }
+            });
+        });
+        function getUrlParameter(sParam) {
+            var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+                    sURLVariables = sPageURL.split('&'),
+                    sParameterName,
+                    i;
+
+            for (i = 0; i < sURLVariables.length; i++) {
+                sParameterName = sURLVariables[i].split('=');
+
+                if (sParameterName[0] === sParam) {
+                    return sParameterName[1] === undefined ? true : sParameterName[1];
+                }
+            }
+        }
+    </script>
+</body>
 </html>
 
