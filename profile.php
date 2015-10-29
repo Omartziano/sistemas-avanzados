@@ -152,7 +152,7 @@
                                                 echo "<td>" . $_SESSION['cartProducts'][$row][$col] . "</td>";
                                                 //echo "\n" . $_SESSION['cartProducts'][$row][$col];
                                             }
-                                            echo "<td><a href='#!' id='eraseFromCart' class='btn waves-effect red lighten-1'>Delete</a></td>";
+                                            echo "<td><a href='#!' id='eraseFromCart' data-id='".$row."' class='btn waves-effect red lighten-1'>Delete</a></td>";
                                         }
                                         ?>
                                     </tr>
@@ -297,6 +297,23 @@
             $('.collection-item').removeClass('active');
             $(this).addClass('active');
         });
+        $(document).on('click', '#eraseFromCart', function () {
+            //alert($(this).attr('data-id'));
+            var dataObject = {
+                removedID: $(this).attr('data-id')};
+            $.ajax({
+                url: "removeFromCartPHP.php",
+                type: 'POST',
+                data: dataObject,
+                success: function (data) {
+                    window.location.href = "../sistemas-avanzados/profile.php?viewCart=true";
+                },
+                error: function (XMLHttpRequest, textStatus, errorThrown) {
+                    alert("Status: " + textStatus);
+                    alert("Error: " + errorThrown);
+                }
+            });
+        });
         $(document).on('click', '#checkOutProducts', function () {
             var d = new Date();
             var curr_date = d.getDate();
@@ -311,13 +328,6 @@
                 type: 'POST',
                 data: dataObject,
                 success: function (data) {
-                    window.location.href = "../sistemas-avanzados/profile.php?viewCart=true";
-                    //alert("Success");
-                    /*if(data == "Success"){
-                     window.location.href = "../sistemas-avanzados/index.php";
-                     }else{
-                     Materialize.toast('Wrong user or password...', 3000);
-                     }*/
                 },
                 error: function (XMLHttpRequest, textStatus, errorThrown) {
                     alert("Status: " + textStatus);
