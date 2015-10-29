@@ -24,7 +24,7 @@
                     <li class="tab col s3"><a id="homeLink" class="waves-effect waves-light">Home</a></li>
                     <li class="tab col s3"><a id="newsLink" class="waves-effect waves-light">News</a></li>
                     <li class="tab col s3"><a id="eventsLink" class="waves-effect waves-light">Events</a></li>
-                    <li class="tab col s3"><a id="storeLink" class="active waves-effect waves-light">Store</a></li>
+                    <li class="tab col s3"><a id="storeLink" class="waves-effect waves-light">Store</a></li>
                     <li class="tab col s3"><a id="contactLink" class="waves-effect waves-light">Contact</a></li>
                     <?php
                     session_set_cookie_params(0);
@@ -32,7 +32,7 @@
                     if (empty($_SESSION["username"])) {
                         echo "<li class='tab col s3'><a id='logInLink' class='waves-effect waves-light'>LogIn</a></li>";
                     } else {
-                        echo "<li class='tab col s3'><a id='logInLink' class='waves-effect waves-light' style='font-size: 10px'>" . $_SESSION["username"] . "</a></li>";
+                        echo "<li class='tab col s3'><a id='logInLink' class='active waves-effect waves-light' style='font-size: 10px'>" . $_SESSION["username"] . "</a></li>";
                     }
                     ?>
                 </ul>
@@ -51,21 +51,19 @@
 
         <div class="container">
             <div class="row">
-
                 <div class="col s12 m4 l3"> 
                     <div class="card">
                         <div class="card-image waves-effect waves-block waves-light">
                             <img class="activator" src="http://i.blogs.es/2d5264/facebook-image/original.jpg">
                         </div>
                         <div class="card-content">
-                            <span class="card-title activator grey-text text-darken-4">User Name
-
+                            <span class="card-title activator grey-text text-darken-4"><?php echo $_SESSION["username"]; ?></span>
                         </div>
                     </div>
                     <div class="collection">
-                        <a href="#!" class="collection-item" id="b_profile">Profile</a>
-                        <a href="#!" class="collection-item" id="b_cart">My Cart</a>
-                        <a href="#!" class="collection-item" id="b_history">History</a>
+                        <a href="#!profile" class="collection-item active" id="b_profile">Profile</a>
+                        <a href="#!cart" class="collection-item" id="b_cart">My Cart</a>
+                        <a href="#!history" class="collection-item" id="b_history">History</a>
 
                     </div>
                 </div>
@@ -76,24 +74,44 @@
                         <div class="collection">
                             <a class="collection-item"><h5>Profile</h5></a>
                         </div>
+                        <?php
+                        $servername = "localhost";
+                        $username = "root";
+                        $password = "";
+                        $dbname = "sistemas avanzados";
+                        $conn = new mysqli($servername, $username, $password, $dbname);
+                        if ($conn->connect_error) {
+                            die("Connection failed: " . $conn->connect_error);
+                        }
+                        $sql = "SELECT nombreUsuario, usuarioUsuario, contrasenaUsuario, emailUsuario FROM usuario where usuarioUsuario = '" . $_SESSION['username'] . "';";
+                        $results = $conn->query($sql);
+                        $datos = $results->fetch_object();
+                        ?>
                         <form class="col s12">
                             <div class="row">
                                 <div class="input-field col s12">
                                     <i class="material-icons prefix">account_circle</i>
                                     <input disabled  id="icon_prefix" type="text" class="fullname validate">
-                                    <label for="icon_prefix">Full Name</label>
+                                    <label for="icon_prefix"><?php echo $datos->nombreUsuario; ?></label>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="input-field col s6">
                                     <i class="material-icons prefix">grade</i>
                                     <input disabled id="icon_telephone" type="tel" class="username validate">
-                                    <label for="icon_telephone">Username</label>
+                                    <label for="icon_telephone"><?php echo $datos->usuarioUsuario; ?></label>
                                 </div>
                                 <div class="input-field col s6">
                                     <i class="material-icons prefix">vpn_key</i>
                                     <input disabled id="password" type="password" class="password validate">
-                                    <label for="icon_telephone">Password</label>
+                                    <label for="icon_telephone"><?php echo $datos->contrasenaUsuario; ?></label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <i class="material-icons prefix">email</i>
+                                    <input disabled id="email" type="email" class="validate">
+                                    <label for="email" data-error="wrong" data-success="right"><?php echo $datos->emailUsuario; ?></label>
                                 </div>
                             </div>
                         </form>
@@ -108,15 +126,37 @@
                                 <tr>
                                     <th data-field="id">Serial #</th>
                                     <th data-field="name">Product Name</th>
-                                    <th data-field="name">Quantity</th>
+                                    <th data-field="name">Description</th>
                                     <th data-field="price">Price</th>
-                                    <th data-field="total">Line Total</th>
+                                    <th data-field="total">Total Items</th>
                                     <th data-field="opcion">Options</th>
                                 </tr>
                             </thead>
 
                             <tbody>
-                                <tr>
+                                <?php
+                                if (empty($_SESSION['cartProducts'])) {
+                                    ?>
+                                    <tr>
+                                        <td colspan="6">No items added to the cart... Yet.</td>
+                                    </tr>
+                                    <?php
+                                } else {
+                                    for ($row = 0; $row < sizeof($_SESSION['cartProducts']); $row++) {
+                                    ?>
+                                    <tr>
+                                        <?php
+                                        $realRow = $row + 1;
+                                        echo "<td>".$realRow."</td>";
+                                        for ($col = 0; $col < sizeof($_SESSION['cartProducts'][$row]); $col++) {    
+                                            echo "<td>".$_SESSION['cartProducts'][$row][$col]."</td>";
+                                            //echo "\n" . $_SESSION['cartProducts'][$row][$col];
+                                        }
+                                        echo "<td><a href='#!' class='btn waves-effect red lighten-1'>Delete</a></td>";
+                                    }
+                                    ?>
+                                    </tr>
+                                <!--<tr>
                                     <td>1</td>
                                     <td>product name</td>
                                     <td>
@@ -129,7 +169,10 @@
                                     <td>$0.87</td>
                                     <td>$0.87</td>
                                     <td><a href="#!" class="btn waves-effect red lighten-1">Delete</a></td>
-                                </tr>
+                                </tr>-->
+                                    <?php
+                                }
+                                ?>
                             </tbody>
                         </table>
                     </div>
@@ -203,30 +246,39 @@
     <script src="js/navbar.js"></script>    
     <script>
         $(document).ready(function () {
-            $('#s_profile').hide();
-            $('#s_cart').hide();
-            $('#s_history').hide();
+            if (getUrlParameter('viewCart') == "true") {
+                $('#s_profile').hide();
+                $('#s_cart').show();
+                $('#s_history').hide();
+                $('.collection-item').removeClass('active');
+                $('.collection-item').eq(1).addClass('active');
+            } else {
+                $('#s_profile').show();
+                $('#s_cart').hide();
+                $('#s_history').hide();
 
-            $("#b_profile").click(function () {
-                $('#s_cart').hide();
-                $('#s_history').hide();
-                $('#s_profile').show(3000);
-            });
-            $("#b_cart").click(function () {
-                $('#s_profile').hide();
-                $('#s_history').hide();
-                $('#s_cart').show(3000);
-            });
-            $("#b_history").click(function () {
-                $('#s_profile').hide();
-                $('#s_cart').hide();
-                $('#s_history').show(3000);
-            });
+                $("#b_profile").click(function () {
+                    $('#s_cart').hide();
+                    $('#s_history').hide();
+                    $('#s_profile').show(500);
+                });
+                $("#b_cart").click(function () {
+                    $('#s_profile').hide();
+                    $('#s_history').hide();
+                    $('#s_cart').show(500);
+                });
+                $("#b_history").click(function () {
+                    $('#s_profile').hide();
+                    $('#s_cart').hide();
+                    $('#s_history').show(500);
+                });
+            }
         });
-
-
+        $(document).on('click', '.collection-item', function () {
+            $('.collection-item').removeClass('active');
+            $(this).addClass('active');
+        });
     </script>
-
 </body>
 </html>
 
