@@ -10,6 +10,7 @@ if(empty($_SESSION['cartProducts'])){
     echo "Error, no cart items found.";
 }else{
     unset($_SESSION['cartProducts'][$postRemovedID]);
+    $_SESSION['cartProducts'] = array_values( $_SESSION['cartProducts'] );
 }
 
 //echo (sizeof($_SESSION['cartProducts'][0]));die();
