@@ -180,7 +180,7 @@
             } else {
                 var stockString = $('.stockValue').text().split(" ");
                 var stock = stockString[0];
-                if ($('.prodQuantity').eq(1).val() > stock) {
+                if (parseInt($('.prodQuantity').eq(1).val()) > parseInt(stock)) {
                     Materialize.toast('Not enough items in stock... Please provide another item quantity', 3000);
                 } else {
                     var dataObject = {

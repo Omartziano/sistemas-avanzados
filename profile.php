@@ -192,19 +192,32 @@
                             <thead>
                                 <tr>
                                     <th data-field="id">Serial #</th>
-                                    <th data-field="name">Date</th>
-                                    <th data-field="total">Line Total</th>
-                                    <th data-field="opcion">Options</th>
+                                    <th data-field="prod">Product ID</th>
+                                    <th data-field="qty">Quantity</th>
                                 </tr>
                             </thead>
 
                             <tbody class="history-tbody">
-                                <tr>
+                                <?php 
+                                //$sql = "SELECT idVentaDetalle, idProducto, cantidad FROM detalleventa where usuarioUsuario = '" . $_SESSION['username'] . "';";
+                                $sql = "SELECT idVentaDetalle, idProducto, cantidad FROM detalleventa;";
+                                $results = $conn->query($sql);
+                                while ($datos = $results->fetch_object()) {
+                                    echo "<tr>";
+                                    echo "<td>".$datos->idVentaDetalle."</td>";
+                                    echo "<td>".$datos->idProducto."</td>";
+                                    echo "<td>".$datos->cantidad."</td>";
+                                    echo "</tr>";
+                                ?>
+                                <!--<tr>
                                     <td>1</td>
                                     <td>27/10/2015</td>
                                     <td>$0.87</td>
                                     <td><a href="#!" class="btn waves-effect red lighten-1">Describe</a></td>
-                                </tr>
+                                </tr>-->
+                                <?php 
+                                }
+                                ?>
                             </tbody>
                         </table>
                     </div>
@@ -328,6 +341,7 @@
                 type: 'POST',
                 data: dataObject,
                 success: function (data) {
+                    window.location.href = "../sistemas-avanzados/profile.php?viewCart=true";
                 },
                 error: function (XMLHttpRequest, textStatus, errorThrown) {
                     alert("Status: " + textStatus);
