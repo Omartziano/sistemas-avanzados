@@ -143,18 +143,18 @@
                                     <?php
                                 } else {
                                     for ($row = 0; $row < sizeof($_SESSION['cartProducts']); $row++) {
-                                    ?>
-                                    <tr>
-                                        <?php
-                                        $realRow = $row + 1;
-                                        echo "<td>".$realRow."</td>";
-                                        for ($col = 0; $col < sizeof($_SESSION['cartProducts'][$row]); $col++) {    
-                                            echo "<td>".$_SESSION['cartProducts'][$row][$col]."</td>";
-                                            //echo "\n" . $_SESSION['cartProducts'][$row][$col];
+                                        ?>
+                                        <tr>
+                                            <?php
+                                            $realRow = $row + 1;
+                                            echo "<td>" . $realRow . "</td>";
+                                            for ($col = 0; $col < sizeof($_SESSION['cartProducts'][$row]); $col++) {
+                                                echo "<td>" . $_SESSION['cartProducts'][$row][$col] . "</td>";
+                                                //echo "\n" . $_SESSION['cartProducts'][$row][$col];
+                                            }
+                                            echo "<td><a href='#!' class='btn waves-effect red lighten-1'>Delete</a></td>";
                                         }
-                                        echo "<td><a href='#!' class='btn waves-effect red lighten-1'>Delete</a></td>";
-                                    }
-                                    ?>
+                                        ?>
                                     </tr>
                                 <!--<tr>
                                     <td>1</td>
@@ -256,23 +256,22 @@
                 $('#s_profile').show();
                 $('#s_cart').hide();
                 $('#s_history').hide();
-
-                $("#b_profile").click(function () {
-                    $('#s_cart').hide();
-                    $('#s_history').hide();
-                    $('#s_profile').show(500);
-                });
-                $("#b_cart").click(function () {
-                    $('#s_profile').hide();
-                    $('#s_history').hide();
-                    $('#s_cart').show(500);
-                });
-                $("#b_history").click(function () {
-                    $('#s_profile').hide();
-                    $('#s_cart').hide();
-                    $('#s_history').show(500);
-                });
             }
+            $("#b_profile").click(function () {
+                $('#s_cart').hide();
+                $('#s_history').hide();
+                $('#s_profile').show(500);
+            });
+            $("#b_cart").click(function () {
+                $('#s_profile').hide();
+                $('#s_history').hide();
+                $('#s_cart').show(500);
+            });
+            $("#b_history").click(function () {
+                $('#s_profile').hide();
+                $('#s_cart').hide();
+                $('#s_history').show(500);
+            });
         });
         $(document).on('click', '.collection-item', function () {
             $('.collection-item').removeClass('active');
