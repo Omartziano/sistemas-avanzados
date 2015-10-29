@@ -133,7 +133,7 @@
                                 </tr>
                             </thead>
 
-                            <tbody>
+                            <tbody class="cart-tbody">
                                 <?php
                                 if (empty($_SESSION['cartProducts'])) {
                                     ?>
@@ -152,7 +152,7 @@
                                                 echo "<td>" . $_SESSION['cartProducts'][$row][$col] . "</td>";
                                                 //echo "\n" . $_SESSION['cartProducts'][$row][$col];
                                             }
-                                            echo "<td><a href='#!' class='btn waves-effect red lighten-1'>Delete</a></td>";
+                                            echo "<td><a href='#!' id='eraseFromCart' class='btn waves-effect red lighten-1'>Delete</a></td>";
                                         }
                                         ?>
                                     </tr>
@@ -175,6 +175,10 @@
                                 ?>
                             </tbody>
                         </table>
+                        <hr>
+                        <button id="checkOutProducts" class="col s3 btn waves-effect waves-light" type="submit" name="action">Checkout
+                            <i class="material-icons right">done</i>
+                        </button>
                     </div>
 
                     <div class="row" id="s_history">
@@ -191,7 +195,7 @@
                                 </tr>
                             </thead>
 
-                            <tbody>
+                            <tbody class="history-tbody">
                                 <tr>
                                     <td>1</td>
                                     <td>27/10/2015</td>
@@ -272,6 +276,11 @@
                 $('#s_cart').hide();
                 $('#s_history').show(500);
             });
+            if($('.cart-tbody').children().children().text().indexOf("No items") >= 0){
+                $('#checkOutProducts').addClass("disabled");
+            }else{
+                $('#checkOutProducts').removeClass("disabled");
+            }
         });
         $(document).on('click', '.collection-item', function () {
             $('.collection-item').removeClass('active');

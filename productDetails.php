@@ -169,29 +169,33 @@
             });
         }(jQuery));
         $(document).on("click", "#addProductToCart", function () {
-            var dataObject = {
-                prodID: getUrlParameter('prodId'),
-                prodDesc: $('p.description').text(),
-                prodPrice: $('span.store-card-price-big').text(),
-                qty: $('.prodQuantity').eq(1).val()};
-            $.ajax({
-                url: "addToCartPHP.php",
-                type: 'POST',
-                data: dataObject,
-                success: function (data) {
-                    window.location.href = "../sistemas-avanzados/profile.php?viewCart=true";
-                    //alert("Success");
-                    /*if(data == "Success"){
-                     window.location.href = "../sistemas-avanzados/index.php";
-                     }else{
-                     Materialize.toast('Wrong user or password...', 3000);
-                     }*/
-                },
-                error: function (XMLHttpRequest, textStatus, errorThrown) {
-                    alert("Status: " + textStatus);
-                    alert("Error: " + errorThrown);
-                }
-            });
+            if ($('#logInLink').text().toString() == "LogIn") {
+                Materialize.toast('Only registered users can purchase items... Please Log In or Register.', 3000);
+            } else {
+                var dataObject = {
+                    prodID: getUrlParameter('prodId'),
+                    prodDesc: $('p.description').text(),
+                    prodPrice: $('span.store-card-price-big').text(),
+                    qty: $('.prodQuantity').eq(1).val()};
+                $.ajax({
+                    url: "addToCartPHP.php",
+                    type: 'POST',
+                    data: dataObject,
+                    success: function (data) {
+                        window.location.href = "../sistemas-avanzados/profile.php?viewCart=true";
+                        //alert("Success");
+                        /*if(data == "Success"){
+                         window.location.href = "../sistemas-avanzados/index.php";
+                         }else{
+                         Materialize.toast('Wrong user or password...', 3000);
+                         }*/
+                    },
+                    error: function (XMLHttpRequest, textStatus, errorThrown) {
+                        alert("Status: " + textStatus);
+                        alert("Error: " + errorThrown);
+                    }
+                });
+            }
         });
     </script>
 </body>
