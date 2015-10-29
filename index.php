@@ -105,7 +105,7 @@
                             </div>
                             <div class="card-content">
                                 <span class="card-title activator grey-text text-darken-4">Champion and skin sale: 09.25 - 09.28<i class="material-icons right">more_vert</i></span>
-                                <p><a href="http://na.leagueoflegends.com/en/news/store/sales/champion-and-skin-sale-0925-0928">Read More...</a></p>
+                                <p><a href="http://na.leagueoflegends.com/en/news/store/sales/champion-and-skin-sale-0925-0928" target="_blank">Read More...</a></p>
                             </div>
                             <div class="card-reveal">
                                 <span class="card-title grey-text text-darken-4">Champion and skin sale: 09.25 - 09.28<i class="material-icons right">close</i></span>
@@ -121,7 +121,7 @@
                             </div>
                             <div class="card-content">
                                 <span class="card-title activator grey-text text-darken-4">It’s time for September bundles and Mystery skins!<i class="material-icons right">more_vert</i></span>
-                                <p><a href="http://na.leagueoflegends.com/en/news/store/sales/its-time-september-bundles-and-mystery-skins">Read More...</a></p>
+                                <p><a href="http://na.leagueoflegends.com/en/news/store/sales/its-time-september-bundles-and-mystery-skins" target="_blank">Read More...</a></p>
                             </div>
                             <div class="card-reveal">
                                 <span class="card-title grey-text text-darken-4">It’s time for September bundles and Mystery skins!<i class="material-icons right">close</i></span>
@@ -137,7 +137,7 @@
                             </div>
                             <div class="card-content">
                                 <span class="card-title activator grey-text text-darken-4">Positive play icon unlocked<i class="material-icons right">more_vert</i></span>
-                                <p><a href="http://na.leagueoflegends.com/en/news/game-updates/player-behavior/positive-play-icon-unlocked">Read More...</a></p>
+                                <p><a href="http://na.leagueoflegends.com/en/news/game-updates/player-behavior/positive-play-icon-unlocked" target="_blank">Read More...</a></p>
                             </div>
                             <div class="card-reveal">
                                 <span class="card-title grey-text text-darken-4">Positive play icon unlocked<i class="material-icons right">close</i></span>
@@ -155,7 +155,7 @@
                             </div>
                             <div class="card-content">
                                 <span class="card-title activator grey-text text-darken-4">Gameplay Update 6.85 and More<i class="material-icons right">more_vert</i></span>
-                                <p><a href="http://blog.dota2.com/2015/09/gameplay-update-6-85-and-more/">Read More...</a></p>
+                                <p><a href="http://blog.dota2.com/2015/09/gameplay-update-6-85-and-more/" target="_blank">Read More...</a></p>
                             </div>
                             <div class="card-reveal">
                                 <span class="card-title grey-text text-darken-4">Gameplay Update 6.85 and More<i class="material-icons right">close</i></span>
@@ -171,7 +171,7 @@
                             </div>
                             <div class="card-content">
                                 <span class="card-title activator grey-text text-darken-4">Reborn has arrived<i class="material-icons right">more_vert</i></span>
-                                <p><a href="http://blog.dota2.com/2015/09/reborn-has-arrived/">Read More...</a></p>
+                                <p><a href="http://blog.dota2.com/2015/09/reborn-has-arrived/" target="_blank">Read More...</a></p>
                             </div>
                             <div class="card-reveal">
                                 <span class="card-title grey-text text-darken-4">Reborn has arrived<i class="material-icons right">close</i></span>
@@ -187,7 +187,7 @@
                             </div>
                             <div class="card-content">
                                 <span class="card-title activator grey-text text-darken-4">PATCH 2.3.0 NOW LIVE<i class="material-icons right">more_vert</i></span>
-                                <p><a href="http://us.battle.net/d3/en/blog/19859662/patch-230-now-live-8-25-2015">Read More...</a></p>
+                                <p><a href="http://us.battle.net/d3/en/blog/19859662/patch-230-now-live-8-25-2015" target="_blank">Read More...</a></p>
                             </div>
                             <div class="card-reveal">
                                 <span class="card-title grey-text text-darken-4">PATCH 2.3.0 NOW LIVE<i class="material-icons right">close</i></span>
@@ -309,17 +309,17 @@
                     <div class="col l3 s12">
                         <h5 class="white-text">External</h5>
                         <ul>
-                            <li><a class="white-text" href="http://na.leagueoflegends.com/">League Of Legends</a></li>
-                            <li><a class="white-text" href="http://blog.dota2.com/">Dota 2</a></li>
-                            <li><a class="white-text" href="http://us.battle.net/d3/en/">Diablo III</a></li>
-                            <li><a class="white-text" href="http://www.smitegame.com/">Smite</a></li>
+                            <li><a class="white-text" href="http://na.leagueoflegends.com/" target="_blank">League Of Legends</a></li>
+                            <li><a class="white-text" href="http://blog.dota2.com/" target="_blank">Dota 2</a></li>
+                            <li><a class="white-text" href="http://us.battle.net/d3/en/" target="_blank">Diablo III</a></li>
+                            <li><a class="white-text" href="http://www.smitegame.com/" target="_blank">Smite</a></li>
                         </ul>
                     </div>
                 </div>
             </div>
             <div class="footer-copyright">
                 <div class="container">
-                    Made by Electronic Systems Department - <a class="brown-text text-lighten-3" href="http://www.uaa.mx/">Universidad Autónoma de México</a>
+                    Made by Electronic Systems Department - <a class="brown-text text-lighten-3" href="http://www.uaa.mx/" target="_blank">Universidad Autónoma de México</a>
                 </div>
             </div>
         </footer>
