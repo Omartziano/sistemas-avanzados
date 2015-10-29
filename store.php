@@ -118,7 +118,7 @@
                                     <h5><?php echo $datos->nombreProducto; ?></h5>
                                     <hr>
                                     <p><span class="store-card-price">$<?php echo $datos->precioProducto; ?></span></p>
-                                    <p class="secondary-product-info"><?php echo $datos->existenciaProducto; ?> items in stock</p>
+                                    <p class="secondary-product-info stockValue"><?php echo $datos->existenciaProducto; ?> items in stock</p>
                                 </div>
                             </div>
                             <?php

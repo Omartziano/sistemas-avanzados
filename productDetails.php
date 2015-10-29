@@ -93,7 +93,7 @@
                             </h6>
                             <p class="description"><?php echo $datos->DescripcionProducto; ?></p>
                             <p><span class="store-card-price-big">$<?php echo $datos->precioProducto; ?></span></p>
-                            <p class="secondary-product-info"><?php echo $datos->existenciaProducto; ?> items in stock</p>
+                            <p class="secondary-product-info stockValue"><?php echo $datos->existenciaProducto; ?> items in stock</p>
                             <div class="valign-wrapper">
                                 <div class="input-field col s4">
                                     <select class="prodQuantity">
@@ -157,6 +157,12 @@
     <script>
         $(document).ready(function () {
             $('select').material_select();
+            var stockString = $('.stockValue').text().split(" ");
+            var stock = stockString[0];
+            if (stock == "0") {
+                $('.stockValue').css("cssText", "color: #FF6161 !important;");
+                $('#addProductToCart').addClass('disabled');
+            }
         });
         (function ($) {
             var $window = $(window),
@@ -172,29 +178,29 @@
             if ($('#logInLink').text().toString() == "LogIn") {
                 Materialize.toast('Only registered users can purchase items... Please Log In or Register.', 3000);
             } else {
-                var dataObject = {
-                    prodID: getUrlParameter('prodId'),
-                    prodDesc: $('p.description').text(),
-                    prodPrice: $('span.store-card-price-big').text(),
-                    qty: $('.prodQuantity').eq(1).val()};
-                $.ajax({
-                    url: "addToCartPHP.php",
-                    type: 'POST',
-                    data: dataObject,
-                    success: function (data) {
-                        window.location.href = "../sistemas-avanzados/profile.php?viewCart=true";
-                        //alert("Success");
-                        /*if(data == "Success"){
-                         window.location.href = "../sistemas-avanzados/index.php";
-                         }else{
-                         Materialize.toast('Wrong user or password...', 3000);
-                         }*/
-                    },
-                    error: function (XMLHttpRequest, textStatus, errorThrown) {
-                        alert("Status: " + textStatus);
-                        alert("Error: " + errorThrown);
-                    }
-                });
+                var stockString = $('.stockValue').text().split(" ");
+                var stock = stockString[0];
+                if ($('.prodQuantity').eq(1).val() > stock) {
+                    Materialize.toast('Not enough items in stock... Please provide another item quantity', 3000);
+                } else {
+                    var dataObject = {
+                        prodID: getUrlParameter('prodId'),
+                        prodDesc: $('p.description').text(),
+                        prodPrice: $('span.store-card-price-big').text(),
+                        qty: $('.prodQuantity').eq(1).val()};
+                    $.ajax({
+                        url: "addToCartPHP.php",
+                        type: 'POST',
+                        data: dataObject,
+                        success: function (data) {
+                            window.location.href = "../sistemas-avanzados/profile.php?viewCart=true";
+                        },
+                        error: function (XMLHttpRequest, textStatus, errorThrown) {
+                            alert("Status: " + textStatus);
+                            alert("Error: " + errorThrown);
+                        }
+                    });
+                }
             }
         });
     </script>
