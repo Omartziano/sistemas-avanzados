@@ -45,6 +45,12 @@ $(document).on('click', 'ul.tabs li a', function () {
     }
 });
 
+$(".collection-item").hover(function () {
+    $("span.badge").css("color", "#fff");
+}, function () {
+    $("span.badge").css("color", "#26a69a");
+});
+
 function getUrlParameter(sParam) {
     var sPageURL = decodeURIComponent(window.location.search.substring(1)),
             sURLVariables = sPageURL.split('&'),

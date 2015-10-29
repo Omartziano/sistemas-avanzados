@@ -176,6 +176,9 @@
                             </tbody>
                         </table>
                         <hr>
+                        <div class="collection">
+                            <a href="#!" class="collection-item">Total<span id="shopTotal" class="badge"></span></a>
+                        </div>
                         <button id="checkOutProducts" class="col s3 btn waves-effect waves-light" type="submit" name="action">Checkout
                             <i class="material-icons right">done</i>
                         </button>
@@ -276,15 +279,51 @@
                 $('#s_cart').hide();
                 $('#s_history').show(500);
             });
-            if($('.cart-tbody').children().children().text().indexOf("No items") >= 0){
+            if ($('.cart-tbody').children().children().text().indexOf("No items") >= 0) {
                 $('#checkOutProducts').addClass("disabled");
-            }else{
+            } else {
                 $('#checkOutProducts').removeClass("disabled");
             }
+            var total = 0;
+            for(var i = 0; i < $('.cart-tbody').children().length; i++){
+                var price = $('.cart-tbody').children().eq(i).children().eq(3).text();
+                var units = $('.cart-tbody').children().eq(i).children().eq(4).text();
+                price = price.replace(/[^0-9\.]/g, '');
+                total = total + (price * units);
+            }
+            $('#shopTotal').text('$'+total);
         });
         $(document).on('click', '.collection-item', function () {
             $('.collection-item').removeClass('active');
             $(this).addClass('active');
+        });
+        $(document).on('click', '#checkOutProducts', function () {
+            var d = new Date();
+            var curr_date = d.getDate();
+            var curr_month = d.getMonth();
+            var curr_year = d.getFullYear();
+            var dataObject = {
+                fechaVenta: curr_date+"-"+curr_month+"-"+curr_year,
+                importeVenta: $('#shopTotal').text(),
+                userName: $('#logInLink').text()};
+            $.ajax({
+                url: "checkoutPHP.php",
+                type: 'POST',
+                data: dataObject,
+                success: function (data) {
+                    window.location.href = "../sistemas-avanzados/profile.php?viewCart=true";
+                    //alert("Success");
+                    /*if(data == "Success"){
+                     window.location.href = "../sistemas-avanzados/index.php";
+                     }else{
+                     Materialize.toast('Wrong user or password...', 3000);
+                     }*/
+                },
+                error: function (XMLHttpRequest, textStatus, errorThrown) {
+                    alert("Status: " + textStatus);
+                    alert("Error: " + errorThrown);
+                }
+            });
         });
     </script>
 </body>

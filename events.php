@@ -161,14 +161,6 @@
         </footer>
 
         <script src="js/navbar.js"></script>
-        <script>
-            $(".collection-item").hover(function () {
-                $("span.badge").css("color", "#fff");
-            }, function () {
-                $("span.badge").css("color", "#26a69a");
-            });
-        </script>
-
     </body>
 </html>
 
