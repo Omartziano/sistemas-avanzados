@@ -83,7 +83,7 @@
                         if ($conn->connect_error) {
                             die("Connection failed: " . $conn->connect_error);
                         }
-                        $sql = "SELECT nombreUsuario, usuarioUsuario, contrasenaUsuario, emailUsuario FROM usuario where usuarioUsuario = '" . $_SESSION['username'] . "';";
+                        $sql = "SELECT idUsuario, nombreUsuario, usuarioUsuario, contrasenaUsuario, emailUsuario FROM usuario where usuarioUsuario = '" . $_SESSION['username'] . "';";
                         $results = $conn->query($sql);
                         $datos = $results->fetch_object();
                         ?>
@@ -192,22 +192,28 @@
                             <thead>
                                 <tr>
                                     <th data-field="id">Serial #</th>
-                                    <th data-field="prod">Product ID</th>
-                                    <th data-field="qty">Quantity</th>
+                                    <th data-field="prod">Purchase Date</th>
+                                    <th data-field="qty">Purchase Total</th>
+                                    <!--<th data-field="action">Actions</th>-->
+                                    <th data-field="action">User</th>
                                 </tr>
                             </thead>
 
                             <tbody class="history-tbody">
                                 <?php 
                                 //$sql = "SELECT idVentaDetalle, idProducto, cantidad FROM detalleventa where usuarioUsuario = '" . $_SESSION['username'] . "';";
-                                $sql = "SELECT idVentaDetalle, idProducto, cantidad FROM detalleventa;";
-                                $results = $conn->query($sql);
-                                while ($datos = $results->fetch_object()) {
+                                $sql = "SELECT idVenta, fechaVenta, importeVenta, idUsuario FROM venta WHERE idUsuario = '".$datos->idUsuario."';";
+                                $results1 = $conn->query($sql);
+                                while ($datos1 = $results1->fetch_object()) {
+                                    //echo "<p>".sizeof($datos1)."</p>";
                                     echo "<tr>";
-                                    echo "<td>".$datos->idVentaDetalle."</td>";
-                                    echo "<td>".$datos->idProducto."</td>";
-                                    echo "<td>".$datos->cantidad."</td>";
+                                    echo "<td>".$datos1->idVenta."</td>";
+                                    echo "<td>".$datos1->fechaVenta."</td>";
+                                    echo "<td>".$datos1->importeVenta."</td>";
+                                    echo "<td>".$datos->idUsuario."</td>";
+                                    //echo "<td><a href='#!' class='btn waves-effect red lighten-1'>Describe</a></td>";
                                     echo "</tr>";
+                                }
                                 ?>
                                 <!--<tr>
                                     <td>1</td>
@@ -215,9 +221,6 @@
                                     <td>$0.87</td>
                                     <td><a href="#!" class="btn waves-effect red lighten-1">Describe</a></td>
                                 </tr>-->
-                                <?php 
-                                }
-                                ?>
                             </tbody>
                         </table>
                     </div>
