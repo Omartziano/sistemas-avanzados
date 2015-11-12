@@ -64,6 +64,10 @@
                                     <label for="League of Legends">League of Legends</label>
                                 </p>
                                 <p>
+                                    <input type="checkbox" id="HearthStone" />
+                                    <label for="HearthStone">HearthStone</label>
+                                </p>
+                                <p>
                                     <input type="checkbox" id="Smite" />
                                     <label for="Smite">Smite</label>
                                 </p>
@@ -71,14 +75,14 @@
                                     <input type="checkbox" id="Heroes of the Storm" />
                                     <label for="Heroes of the Storm">Heroes of the Storm</label>
                                 </p>
-                                <p>
+<!--                                <p>
                                     <input type="checkbox" id="World of Warcraft" />
                                     <label for="World of Warcraft">World of Warcraft</label>
-                                </p>
+                                </p>-->
                             </div>
                         </li>
                         <li id="collectibles-filter">
-                            <div class="collapsible-header store-collapsible active"><i class="material-icons">reorder</i>Collectibles</div>
+                            <div class="collapsible-header store-collapsible active"><i class="material-icons">reorder</i>Categories</div>
                             <div class="collapsible-body">
                                 <p>
                                     <input type="checkbox" id="Plush" />
@@ -91,6 +95,14 @@
                                 <p>
                                     <input type="checkbox" id="Statues" />
                                     <label for="Statues">Statues</label>
+                                </p>
+                                <p>
+                                    <input type="checkbox" id="Shirts" />
+                                    <label for="Shirts">Shirts</label>
+                                </p>
+                                <p>
+                                    <input type="checkbox" id="Accessories" />
+                                    <label for="Accessories">Accessories</label>
                                 </p>
                             </div>
                         </li>
@@ -189,9 +201,6 @@
         var gameNameFilters = new Array();
         var productCategoryFilters = new Array();
         var didClickOnFilter = false;
-        $(document).on("click", ".productDetails", function () {
-            window.location.href = "../sistemas-avanzados/productDetails.php?prodId=" + $(this).attr('id');
-        });
         $(document).on("change", "input:checkbox", function () {
             didClickOnFilter = true;
             for (var i = 0; i < $('#productsContainer').children().length; i++) {
