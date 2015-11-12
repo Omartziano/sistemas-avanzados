@@ -14,6 +14,9 @@
         <script src="js/jquery-2.1.4.min.js"></script>
         <script src="js/materialize.js"></script>
         <script src="js/init.js"></script>
+        <script src="https://code.highcharts.com/maps/highmaps.js"></script>
+        <script src="https://code.highcharts.com/maps/modules/data.js"></script>
+        <script src="https://code.highcharts.com/mapdata/custom/world.js"></script>
 
     </head>
     <body>
@@ -49,7 +52,7 @@
             </div>
         </nav>
 
-        <div class="container">
+        <div class="col s12 m8 l9">
             <div class="row">
                 <div class="col s12 m4 l3"> 
                     <div class="card">
@@ -69,7 +72,7 @@
 
                 <div class="col s12 m8 l9"> 
 
-                    <div class="row" id="s_profile">
+                    <div class="col s4 m8 l9" id="s_profile">
                         <div class="collection">
                             <a class="collection-item"><h5>Profile</h5></a>
                         </div>
@@ -116,71 +119,10 @@
                         </form>
                     </div>
 
-                    <div class="row" id="s_cart">
-                        <div class="collection">
-                            <a class="collection-item"><h5>My Cart</h5></a>
-                        </div>
-                        <table class="responsive-table centered striped">
-                            <thead>
-                                <tr>
-                                    <th data-field="id">Serial #</th>
-                                    <th data-field="name">Product Name</th>
-                                    <th data-field="name">Description</th>
-                                    <th data-field="price">Price</th>
-                                    <th data-field="total">Total Items</th>
-                                    <th data-field="opcion">Options</th>
-                                </tr>
-                            </thead>
-
-                            <tbody class="cart-tbody">
-                                <?php
-                                if (empty($_SESSION['cartProducts'])) {
-                                    ?>
-                                    <tr>
-                                        <td colspan="6">No items added to the cart... Yet.</td>
-                                    </tr>
-                                    <?php
-                                } else {
-                                    for ($row = 0; $row < sizeof($_SESSION['cartProducts']); $row++) {
-                                        ?>
-                                        <tr>
-                                            <?php
-                                            $realRow = $row + 1;
-                                            echo "<td>" . $realRow . "</td>";
-                                            for ($col = 0; $col < sizeof($_SESSION['cartProducts'][$row]); $col++) {
-                                                echo "<td>" . $_SESSION['cartProducts'][$row][$col] . "</td>";
-                                                //echo "\n" . $_SESSION['cartProducts'][$row][$col];
-                                            }
-                                            echo "<td><a href='#!' id='eraseFromCart' data-id='".$row."' class='btn waves-effect red lighten-1'>Delete</a></td>";
-                                        }
-                                        ?>
-                                    </tr>
-                                <!--<tr>
-                                    <td>1</td>
-                                    <td>product name</td>
-                                    <td>
-                                        <select class="browser-default">
-                                            <option value="1">1</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
-                                        </select>
-                                    </td>
-                                    <td>$0.87</td>
-                                    <td>$0.87</td>
-                                    <td><a href="#!" class="btn waves-effect red lighten-1">Delete</a></td>
-                                </tr>-->
-                                    <?php
-                                }
-                                ?>
-                            </tbody>
-                        </table>
-                        <hr>
-                        <div class="collection">
-                            <a href="#!" class="collection-item">Total<span id="shopTotal" class="badge"></span></a>
-                        </div>
-                        <button id="checkOutProducts" class="col s3 btn waves-effect waves-light" type="submit" name="action">Checkout
-                            <i class="material-icons right">done</i>
-                        </button>
+                    <div class="col s3 m8 l9" id="s_cart">
+                        <div class="col s3 m8 l9" id="container" ></div>
+                        <div class="col s3 m8 l9" id="polar" ></div>     
+                        <div id="estimacion"></div>
                     </div>
                 </div>
 
@@ -223,7 +165,110 @@
             </div>
         </div>
     </footer>
-    <script src="js/navbar.js"></script>    
+    <script src="js/navbar.js"></script> 
+    <script>
+        $(function () {
+
+            $('#polar').highcharts({
+                chart: {
+                    polar: true,
+                    type: 'line'
+                },
+                title: {
+                    text: '2015 vs 2014',
+                    x: -80
+                },
+                pane: {
+                    size: '80%'
+                },
+                xAxis: {
+                    categories: ['Shirts', 'Figures', 'Plush', 'Accessories'],
+                    tickmarkPlacement: 'on',
+                    lineWidth: 0
+                },
+                yAxis: {
+                    gridLineInterpolation: 'polygon',
+                    lineWidth: 0,
+                    min: 0
+                },
+                tooltip: {
+                    shared: true,
+                    pointFormat: '<span style="color:{series.color}">{series.name}: <b>${point.y:,.0f}</b><br/>'
+                },
+                legend: {
+                    align: 'right',
+                    verticalAlign: 'top',
+                    y: 70,
+                    layout: 'vertical'
+                },
+                series: [{
+                        name: 'Allocated Budget',
+                        data: [43000, 19000, 60000, 35000],
+                        pointPlacement: 'on'
+                    }, {
+                        name: 'Actual Spending',
+                        data: [50000, 39000, 42000, 31000],
+                        pointPlacement: 'on'
+                    }]
+
+            });
+        });
+    </script>
+    <script>
+        $(function () {
+
+            $.getJSON('https://www.highcharts.com/samples/data/jsonp.php?filename=world-population.json&callback=?', function (data) {
+
+                var mapData = Highcharts.geojson(Highcharts.maps['custom/world']);
+
+                // Correct UK to GB in data
+                $.each(data, function () {
+                    if (this.code === 'UK') {
+                        this.code = 'GB';
+                    }
+                });
+
+                $('#container').highcharts('Map', {
+                    chart: {
+                        borderWidth: 1
+                    },
+                    title: {
+                        text: 'World Solls'
+                    },
+                    subtitle: {
+                        text: 'Solls by Location in 2015'
+                    },
+                    legend: {
+                        enabled: false
+                    },
+                    mapNavigation: {
+                        enabled: true,
+                        buttonOptions: {
+                            verticalAlign: 'bottom'
+                        }
+                    },
+                    series: [{
+                            name: 'Countries',
+                            mapData: mapData,
+                            color: '#009688',
+                            enableMouseTracking: false
+                        }, {
+                            type: 'mapbubble',
+                            mapData: mapData,
+                            name: 'Solls 2015',
+                            joinBy: ['iso-a2', 'code'],
+                            data: data,
+                            minSize: 4,
+                            maxSize: '12%',
+                            tooltip: {
+                                pointFormat: '{point.code}: {point.z} dollars'
+                            }
+                        }]
+                });
+
+            });
+        });
+    </script>
     <script>
         $(document).ready(function () {
             if (getUrlParameter('viewCart') == "true") {
@@ -250,13 +295,13 @@
                 $('#checkOutProducts').removeClass("disabled");
             }
             var total = 0;
-            for(var i = 0; i < $('.cart-tbody').children().length; i++){
+            for (var i = 0; i < $('.cart-tbody').children().length; i++) {
                 var price = $('.cart-tbody').children().eq(i).children().eq(3).text();
                 var units = $('.cart-tbody').children().eq(i).children().eq(4).text();
                 price = price.replace(/[^0-9\.]/g, '');
                 total = total + (price * units);
             }
-            $('#shopTotal').text('$'+total);
+            $('#shopTotal').text('$' + total);
         });
         $(document).on('click', '.collection-item', function () {
             $('.collection-item').removeClass('active');
@@ -285,7 +330,7 @@
             var curr_month = d.getMonth();
             var curr_year = d.getFullYear();
             var dataObject = {
-                fechaVenta: curr_date+"-"+curr_month+"-"+curr_year,
+                fechaVenta: curr_date + "-" + curr_month + "-" + curr_year,
                 importeVenta: $('#shopTotal').text(),
                 userName: $('#logInLink').text()};
             $.ajax({
@@ -301,6 +346,43 @@
                 }
             });
         });
+    </script>
+    <script>
+    $(function () {
+    $('#estimacion').highcharts({
+        xAxis: {
+            min: 0,
+            max: 8
+        },
+        yAxis: {
+            min: 0
+        },
+        title: {
+            text: 'forecasts for the periods 2015'
+        },
+        series: [{
+            type: 'line',
+            name: 'Regression Line',
+            data: [[1, 5266.68], [7,13067]],
+            marker: {
+                enabled: false
+            },
+            states: {
+                hover: {
+                    lineWidth: 0
+                }
+            },
+            enableMouseTracking: false
+        }, {
+            type: 'scatter',
+            name: 'Period sales',
+            data: [0,7000, 9000, 5000, 11000, 10000, 13000],
+            marker: {
+                radius: 4
+            }
+        }]
+    });
+});
     </script>
 </body>
 </html>
