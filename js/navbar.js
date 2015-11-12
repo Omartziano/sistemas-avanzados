@@ -19,6 +19,9 @@ $(function () {
      break;
      }*/
 });
+$(document).on("click", ".productDetails", function () {
+    window.location.href = "../sistemas-avanzados/productDetails.php?prodId=" + $(this).attr('id');
+});
 $(document).on('click', 'ul.tabs li a', function () {
     switch ($(this).text().toString()) {
         case "Home":

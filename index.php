@@ -224,9 +224,54 @@
                 <div class="collection">
                     <a class="collection-item"><h5>Most popular products</h5></a>
                 </div>
-                <div class="row">
+                <div class="col s12 m8 l9"> <!-- Note that "m4 l3" was added -->
+                    <div id="productsContainer">
+                        <?php
+                        $servername = "localhost";
+                        $username = "root";
+                        $password = "";
+                        $dbname = "sistemas avanzados";
+                        $conn = new mysqli($servername, $username, $password, $dbname);
+                        if ($conn->connect_error) {
+                            die("Connection failed: " . $conn->connect_error);
+                        }
+                        $rowLimit = 1;
+                        //SELECT nombreProducto, categoriaProducto, precioProducto, existenciaProducto, idJuegoProducto, imagenProducto, idJuego, nombreJuego FROM producto, juego WHERE idJuegoProducto = idJuego AND nombreJuego = 'League Of Legends';
+                        //SELECT nombreProducto, categoriaProducto, precioProducto, existenciaProducto, idJuegoProducto, imagenProducto, idJuego, nombreJuego, idCategoria_Producto, nombre_Categoria FROM producto, juego, categoria_producto WHERE idJuegoProducto = idJuego and idCategoria_Producto = categoriaProducto
+                        $sql = "SELECT nombreProducto, categoriaProducto, precioProducto, existenciaProducto, idJuegoProducto, imagenProducto, idJuego, nombreJuego, idCategoria_Producto, nombre_Categoria FROM producto, juego, categoria_producto WHERE idJuegoProducto = idJuego and idCategoria_Producto = categoriaProducto LIMIT 4;";
+                        //$stringResult;
+                        $results = $conn->query($sql);
+                        while ($datos = $results->fetch_object()) {
+                            if ($rowLimit == 1) {
+                                ?>
+                                <div class="row">
+                                    <?php
+                                }
+                                ?>
+                                <div class="col s12 m3" data-game-name="<?php echo $datos->nombreJuego; ?>" data-product-category="<?php echo $datos->nombre_Categoria; ?>">
+                                    <div id="<?php echo $datos->nombreProducto; ?>" class="hoverable icon-block productDetails">
+                                        <h2 class="center brown-text"><img class="activator" src="data:image/jpg; base64, <?php echo base64_encode($datos->imagenProducto); ?>" /></h2>
+                                        <h5><?php echo $datos->nombreProducto; ?></h5>
+                                        <hr>
+                                        <p><span class="store-card-price">$<?php echo $datos->precioProducto; ?></span></p>
+                                        <p class="secondary-product-info stockValue"><?php echo $datos->existenciaProducto; ?> items in stock</p>
+                                    </div>
+                                </div>
+                                <?php
+                                $rowLimit++;
+                                if ($rowLimit == 5) {
+                                    ?>
+                                </div>
+                                <?php
+                                $rowLimit = 1;
+                            }
+                        }
+                    ?>
+                    </div>
+                </div>
+                <!--<div class="row">
                     <div class="col s12 m4">
-                        <div class="hoverable icon-block">
+                        <div class="hoverable icon-block ">
                             <h2 class="center brown-text"><img class="activator" src="img/products/gravesshirtfront_1_.png"></h2>
                             <h5 class="center">Graves Tee (unisex)</h5>
                             <p class="center">US$25.00</p>
@@ -248,7 +293,7 @@
                             <p class="center">US$25.00 <br>Out of stock</p>
                         </div>
                     </div>
-                </div>
+                </div>-->
 
             </div>
         </div>
