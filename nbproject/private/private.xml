@@ -3,17 +3,21 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/xampp/htdocs/UAA/SistAvanzados/sistemas-avanzados/store.php</file>
-            <file>file:/C:/xampp/htdocs/UAA/SistAvanzados/sistemas-avanzados/register.php</file>
-            <file>file:/C:/xampp/htdocs/UAA/SistAvanzados/sistemas-avanzados/index.php</file>
-            <file>file:/C:/xampp/htdocs/UAA/SistAvanzados/sistemas-avanzados/login.php</file>
-            <file>file:/C:/xampp/htdocs/UAA/SistAvanzados/sistemas-avanzados/events.php</file>
+            <file>file:/C:/xampp/htdocs/UAA/SistAvanzados/sistemas-avanzados/productDetails.php</file>
+            <file>file:/C:/xampp/htdocs/UAA/SistAvanzados/sistemas-avanzados/addToCartPHP.php</file>
             <file>file:/C:/xampp/htdocs/UAA/SistAvanzados/sistemas-avanzados/news.php</file>
             <file>file:/C:/xampp/htdocs/UAA/SistAvanzados/sistemas-avanzados/css/style.css</file>
-            <file>file:/C:/xampp/htdocs/UAA/SistAvanzados/sistemas-avanzados/contact.php</file>
+            <file>file:/C:/xampp/htdocs/UAA/SistAvanzados/sistemas-avanzados/checkoutPHP.php</file>
             <file>file:/C:/xampp/htdocs/UAA/SistAvanzados/sistemas-avanzados/js/navbar.js</file>
+            <file>file:/C:/xampp/htdocs/UAA/SistAvanzados/sistemas-avanzados/profileadmin.php</file>
+            <file>file:/C:/xampp/htdocs/UAA/SistAvanzados/sistemas-avanzados/store.php</file>
+            <file>file:/C:/xampp/htdocs/UAA/SistAvanzados/sistemas-avanzados/index.php</file>
+            <file>file:/C:/xampp/htdocs/UAA/SistAvanzados/sistemas-avanzados/register.php</file>
+            <file>file:/C:/xampp/htdocs/UAA/SistAvanzados/sistemas-avanzados/login.php</file>
+            <file>file:/C:/xampp/htdocs/UAA/SistAvanzados/sistemas-avanzados/events.php</file>
+            <file>file:/C:/xampp/htdocs/UAA/SistAvanzados/sistemas-avanzados/contact.php</file>
             <file>file:/C:/xampp/htdocs/UAA/SistAvanzados/sistemas-avanzados/registerPHP.php</file>
-            <file>file:/C:/xampp/htdocs/UAA/SistAvanzados/sistemas-avanzados/filterPHP.php</file>
+            <file>file:/C:/xampp/htdocs/UAA/SistAvanzados/sistemas-avanzados/getDSSInfoPHP.php</file>
             <file>file:/C:/xampp/htdocs/UAA/SistAvanzados/sistemas-avanzados/loginPHP.php</file>
         </group>
     </open-files>

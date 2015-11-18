@@ -193,7 +193,11 @@
                         type: 'POST',
                         data: dataObject,
                         success: function (data) {
-                            window.location.href = "../sistemas-avanzados/profile.php?viewCart=true";
+                            if(data == "Repeat"){
+                                Materialize.toast('Product already in cart... Please checkout this product before purchase the same item.', 3000);
+                            }else{
+                                window.location.href = "../sistemas-avanzados/profile.php?viewCart=true";
+                            }
                         },
                         error: function (XMLHttpRequest, textStatus, errorThrown) {
                             alert("Status: " + textStatus);

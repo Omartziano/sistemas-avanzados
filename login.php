@@ -129,10 +129,14 @@
                     type: 'POST',
                     data: dataObject,
                     success: function (data) {
-                        if(data == "Success"){
-                            window.location.href = "../sistemas-avanzados/index.php";
+                        if(data == "administrador"){
+                            window.location.href = "../sistemas-avanzados/profileadmin.php";
                         }else{
-                            Materialize.toast('Wrong user or password...', 3000);
+                            if(data == "usuario"){
+                                window.location.href = "../sistemas-avanzados/index.php";
+                            }else{
+                                Materialize.toast('Wrong user or password...', 3000);
+                            }
                         }
                     },
                     error: function(XMLHttpRequest, textStatus, errorThrown) { 

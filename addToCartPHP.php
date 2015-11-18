@@ -14,6 +14,14 @@ if(empty($_SESSION['cartProducts'])){
         array($postProductID, $postProductDesc, $postProductPrice, $postQty));
     $_SESSION['cartProducts'] = $order;
 }else{
+    for($row = 0; $row < sizeof($_SESSION['cartProducts']); $row++) {
+        for ($col = 0; $col < sizeof($_SESSION['cartProducts'][$row]); $col++) {
+            if($_SESSION['cartProducts'][$row][$col] == $postProductID = $_POST['prodID']){
+                echo "Repeat";die();
+            }
+            //echo "\n".$_SESSION['cartProducts'][$row][$col];
+        }
+    }
     $order = array($postProductID, $postProductDesc, $postProductPrice, $postQty);
     array_push($_SESSION['cartProducts'], $order);
 }

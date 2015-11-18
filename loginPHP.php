@@ -26,7 +26,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
 
-$sql = "SELECT usuarioUsuario, contrasenaUsuario FROM usuario WHERE usuarioUsuario = '".$postUsername."';";
+$sql = "SELECT usuarioUsuario, contrasenaUsuario, categoriaUsuario FROM usuario WHERE usuarioUsuario = '".$postUsername."';";
 
 if ($results = $conn->query($sql)) {
     $row = $results->fetch_array();
@@ -34,7 +34,7 @@ if ($results = $conn->query($sql)) {
         session_set_cookie_params(0);
         session_start();
         $_SESSION["username"] = $postUsername;
-        echo "Success";
+        echo $row[2];
     }else{
         echo "Fail";
     }
