@@ -5,24 +5,11 @@
  */
 $(function () {
     $('ul.tabs').tabs();
-    /*$("#navBar").load("../sistemas-avanzados/includes/navbar.html");
-     $("#footer").load("../sistemas-avanzados/includes/footer.html");
-     var url = window.location.href.split('/');
-     alert(url[url.length-1]);
-     $('ul.tabs li').children().removeClass("active");
-     switch(url[url.length-1]){
-     case "index.html":
-     $('a#homeLink').addClass("active");
-     break;
-     case "news.html":
-     $('a#newsLink').addClass("active");
-     break;
-     }*/
 });
 $(document).on("click", ".productDetails", function () {
     window.location.href = "../sistemas-avanzados/productDetails.php?prodId=" + $(this).attr('id');
 });
-$(document).on('click', 'ul.tabs li a', function () {
+$(document).on('click', 'ul.tabs li a, ul#nav-mobile li a', function () {
     switch ($(this).text().toString()) {
         case "Home":
             window.location.href = "../sistemas-avanzados/index.php";

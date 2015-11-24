@@ -64,6 +64,7 @@
                         <a href="#!profile" class="collection-item active" id="b_profile">Profile</a>
                         <a href="#!cart" class="collection-item" id="b_cart">My Cart</a>
                         <a href="#!history" class="collection-item" id="b_history">History</a>
+                        <a href="#!logOut" class="collection-item" id="log_out">LogOut</a>
 
                     </div>
                 </div>
@@ -345,6 +346,19 @@
                 data: dataObject,
                 success: function (data) {
                     window.location.href = "../sistemas-avanzados/profile.php?viewCart=true";
+                },
+                error: function (XMLHttpRequest, textStatus, errorThrown) {
+                    alert("Status: " + textStatus);
+                    alert("Error: " + errorThrown);
+                }
+            });
+        });
+        $(document).on('click', '#log_out', function () {
+            $.ajax({
+                url: "logoutPHP.php",
+                type: 'POST',
+                success: function (data) {
+                    window.location.href = "../sistemas-avanzados/index.php";
                 },
                 error: function (XMLHttpRequest, textStatus, errorThrown) {
                     alert("Status: " + textStatus);

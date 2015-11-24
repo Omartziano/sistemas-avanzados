@@ -163,6 +163,12 @@
                 $('.stockValue').css("cssText", "color: #FF6161 !important;");
                 $('#addProductToCart').addClass('disabled');
             }
+            var $window = $(window),
+                    $row = $('.container .row');
+            if ($window.width() < 601) {
+                $row.removeClass('valign-wrapper');
+            } else
+                $row.addClass('valign-wrapper');
         });
         (function ($) {
             var $window = $(window),
