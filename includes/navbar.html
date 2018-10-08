@@ -1,0 +1,42 @@
+<nav class="black" role="navigation">
+    <div class="nav-wrapper container">
+        <a id="logo-container" href="#" class="brand-logo"><img src="img/logo/porosunnyrays.png" class="display-logo"/><span>Lalelulelo</span></a>
+        <ul class="right hide-on-med-and-down tabs">
+            <li class="tab col s3"><a id="homeLink" class="waves-effect waves-light">Home</a></li>
+            <li class="tab col s3"><a id="newsLink" class="waves-effect waves-light">News</a></li>
+            <li class="tab col s3"><a id="eventsLink" class="waves-effect waves-light">Events</a></li>
+            <li class="tab col s3"><a id="storeLink" class="waves-effect waves-light">Store</a></li>
+            <li class="tab col s3"><a id="contactLink" class="waves-effect waves-light">Contact</a></li>
+            <li class="tab col s3"><a id="logInLink" class="waves-effect waves-light">LogIn</a></li>
+        </ul>
+
+        <ul id="nav-mobile" class="side-nav">
+            <li><a id="homeMobileLink" class="waves-effect waves-light">Home</a></li>
+            <li><a id="newsMobileLink" class="waves-effect waves-light">News</a></li>
+            <li><a id="eventsMobileLink" class="waves-effect waves-light">Events</a></li>
+            <li><a id="storeMobileLink" class="waves-effect waves-light">Store</a></li>
+            <li><a id="contactMobileLink" class="waves-effect waves-light">Contact</a></li>
+            <li><a id="logInMobileLink" class="waves-effect waves-light">LogIn</a></li>
+        </ul>
+        <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+    </div>
+</nav>
+<script>
+    $(function () {
+        $('ul.tabs').tabs();
+    });
+    $( document ).on('click', 'ul.tabs li a', function(){
+//        alert($(this).text());
+        switch($(this).text().toString()){
+            case "Home":
+                window.location.href = "../sistemas-avanzados/index.html";
+                $(this).attr("active");
+                break;
+            case "News":
+                window.location.href = "../sistemas-avanzados/news.html";
+                $(this).attr("active");
+                break;
+        }
+    });
+</script>
+

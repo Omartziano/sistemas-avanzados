@@ -1,0 +1,165 @@
+/* Custom Stylesheet */
+/**
+ * Use this file to override Materialize files so you can update
+ * the core Materialize files in the future
+ *
+ * Made By MaterializeCSS.com
+ */
+
+@font-face {
+    font-family: TimeSplitters;
+    src: url(../font/never.ttf);
+}
+
+nav ul a,
+nav .brand-logo {
+  color: #E6E6E6;
+  /*font-family: TimeSplitters;*/
+}
+
+nav .brand-logo span{
+  font-size: 20px;
+  /*font-family: TimeSplitters;*/
+}
+
+nav .brand-logo span{
+  position: absolute;
+}
+
+nav .tabs{
+  width: 65%!important;
+  background-color: black!important;
+  margin: 6px 0px 6px 0px;
+}
+
+.card .card-content .card-title {
+    line-height: 25px;
+}
+
+.card .card-content p a{
+    color: #009688;
+}
+
+.icon-block .store-card-price{
+    color: #009688;
+}
+
+.icon-block .store-card-price-big{
+    color: #009688;
+    font-size: 28px;
+    line-height: 2rem;
+}
+
+.icon-block p{
+    line-height: 0.5rem;
+}
+
+.icon-block p.description{
+    line-height: 1.3rem;
+}
+
+.secondary-product-info{
+    font-size: 14px;
+    color: #bcaaa4 !important;
+    padding-bottom: 10px;
+}
+
+hr{
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(105, 105, 105, 0.75), rgba(0, 0, 0, 0));
+}
+
+ul.collapsible .collapsible-header img{
+    margin-top: 15px;
+    margin-bottom: -15px!important;
+    width: 100%;
+}
+
+ul.collapsible .collapsible-header h5{
+    color: #009688;
+}
+
+ul.collapsible .collapsible-body .event-sub{
+    font-size: 1.3rem;
+    color: gray;
+    padding-bottom: .5rem;
+}
+
+ul.collapsible .collapsible-body p{
+    padding: 1rem 2rem .5em 2rem;
+}
+
+ul.collapsible .collapsible-body img{
+    width: 100%;
+}
+
+ul.collapsible .collapsible-body ol li{
+    list-style-type: upper-roman!important;
+    margin-left: 30px;
+}
+
+p {
+  line-height: 2rem;
+}
+
+.button-collapse {
+  color: #26a69a;
+}
+
+.parallax-container {
+  min-height: 380px;
+  line-height: 0;
+  height: auto;
+  color: rgba(255,255,255,.9);
+}
+  .parallax-container .section {
+    width: 100%;
+  }
+  
+  .parallax img{
+      left: 60%!important;
+      top: -395px!important;
+  }
+
+@media only screen and (max-width : 992px) {
+  .parallax-container .section {
+    position: absolute;
+    top: 40%;
+  }
+  #index-banner .section {
+    top: 10%;
+  }
+}
+
+@media only screen and (max-width : 600px) {
+  #index-banner .section {
+    top: 0;
+  }
+}
+
+.icon-block {
+  padding: 0 15px;
+}
+
+.icon-block img{
+  width: 100%;
+}
+
+.icon-block .material-icons {
+  font-size: inherit;
+}
+
+.collapsible .store-collapsible{
+    background-color: #009688!important;
+    color: #fff!important;
+}
+
+#checkOutProducts{
+    margin-top: 10px;
+    float: right;
+}
+
+footer.page-footer {
+  margin: 0;
+}
